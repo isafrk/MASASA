@@ -615,6 +615,63 @@
       text-decoration: underline;
     }
 
+    
+    .project-visual {
+      background: #000;
+      border-bottom: var(--border);
+      height: 220px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .project-preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .project-card:hover .project-preview-img {
+      transform: scale(1.05);
+    }
+    .file-dropzone {
+      border: 2px dashed #334155;
+      background: #090B10;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+    .file-dropzone:hover {
+      border-color: var(--lime);
+      background: #0d121a;
+    }
+    .file-input-hidden {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .file-list-preview {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--cyan);
+      text-align: left;
+    }
+    .file-item {
+      display: inline-block;
+      background: #171923;
+      border: 1px solid #334155;
+      padding: 3px 8px;
+      margin: 3px;
+      border-radius: 3px;
+    }
+
     /* 7 WEAPONS CAPABILITIES GRID */
     .weapons-grid {
       display: grid;
@@ -982,10 +1039,10 @@
         <!-- Project 1 -->
         <article class="project-card">
           <div>
-            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #172554);">
+            <div class="project-visual">
+              <img src="preview_gameonradar.png" alt="GameOnRadar.online Live Production Preview" class="project-preview-img" loading="lazy">
               <div class="project-badge tag">GLOBAL RADAR</div>
               <div class="project-role tag">FULL-STACK &amp; EDGE</div>
-              <span style="font-size: 48px;">🎮</span>
             </div>
             <div class="project-content">
               <h3 class="project-title font-title">GameOnRadar.online</h3>
@@ -1009,10 +1066,10 @@
         <!-- Project 2 -->
         <article class="project-card">
           <div>
-            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #4c0519);">
+            <div class="project-visual">
+              <img src="preview_downtik.png" alt="DownTik.web.id Live Production Preview" class="project-preview-img" loading="lazy">
               <div class="project-badge tag" style="background:var(--pink); color:#fff;">HIGH TRAFFIC TOOL</div>
               <div class="project-role tag">PERFORMANCE OPTIMIZATION</div>
-              <span style="font-size: 48px;">⚡</span>
             </div>
             <div class="project-content">
               <h3 class="project-title font-title">DownTik.web.id</h3>
@@ -1036,10 +1093,10 @@
         <!-- Project 3 -->
         <article class="project-card">
           <div>
-            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #3f2c00);">
+            <div class="project-visual">
+              <img src="preview_gomora.png" alt="GomoraGame.my.id Live Production Preview" class="project-preview-img" loading="lazy">
               <div class="project-badge tag" style="background:var(--yellow); color:#000;">COMMUNITY PORTAL</div>
               <div class="project-role tag">ARCHITECTURE &amp; CONTENT</div>
-              <span style="font-size: 48px;">🕹️</span>
             </div>
             <div class="project-content">
               <h3 class="project-title font-title">GomoraGame.my.id</h3>
@@ -1323,10 +1380,10 @@
         Open for global remote contracts, autonomous AI agent setups, and high-conversion engineering. Choose your preferred intake channel below:
       </p>
 
-      <!-- WEB INTAKE FORM (DIRECT DISCORD WEBHOOK) -->
+            <!-- WEB INTAKE FORM (DIRECT DISCORD WEBHOOK + FILE UPLOAD) -->
       <div class="form-box">
         <div style="font-size:12px; color:var(--cyan); margin-bottom:16px; text-transform:uppercase; letter-spacing:1px;" class="font-mono">
-          ⚡ DIRECT SPRINT INTAKE // SENDS REALTIME ALERT TO DISCORD KITCHEN
+          ⚡ DIRECT SPRINT INTAKE // SENDS REALTIME BRIEF &amp; ATTACHMENTS TO DISCORD KITCHEN
         </div>
         <form id="leadForm">
           <div class="form-row">
@@ -1342,31 +1399,48 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Service Domain *</label>
+              <label class="form-label">Select Requested Job / Service Domain *</label>
               <select id="serviceDomain" class="form-select" required>
-                <option value="01 UI/UX Design & Design Systems">01 UI/UX Design &amp; Design Systems</option>
-                <option value="02 Autonomous AI Agent (Hermes)">02 Autonomous AI Agent (Hermes)</option>
-                <option value="03 High-Converting Web & Landing Pages">03 High-Converting Web &amp; Landing Pages</option>
-                <option value="04 Discord & Telegram Automation">04 Discord &amp; Telegram Automation</option>
-                <option value="05 Programmatic Video & Batch Pipelines">05 Programmatic Video &amp; Batch Pipelines</option>
-                <option value="06 Web Scraping & Data Extraction">06 Web Scraping &amp; Data Extraction</option>
-                <option value="07 Internal Tools & Micro-Backends">07 Internal Tools &amp; Micro-Backends</option>
-                <option value="Custom Project / Retainer">Custom Project / Retainer</option>
+                <option value="01 UI/UX Design & Design Systems (From $350)">01 ── UI/UX Design &amp; Scalable Design Systems (From $350 USD)</option>
+                <option value="02 Autonomous AI Agent Deployment (From $650)">02 ── Autonomous AI Agent (Hermes Flagship) (From $650 USD)</option>
+                <option value="03 High-Converting Web & Landing Pages (From $450)">03 ── High-Converting Web &amp; Landing Pages (From $450 USD)</option>
+                <option value="04 Discord & Telegram AI Automation (From $300)">04 ── Discord &amp; Telegram AI Automation (From $300 USD)</option>
+                <option value="05 Programmatic Video & Batch Pipelines (From $400)">05 ── Programmatic Video &amp; Batch Pipelines (From $400 USD)</option>
+                <option value="06 Web Scraping & Enterprise Extraction (From $300)">06 ── Web Scraping &amp; Data Extraction (From $300 USD)</option>
+                <option value="07 Internal Tools & Micro-Backends (From $450)">07 ── Internal Tools &amp; Micro-Backends (From $450 USD)</option>
+                <option value="08 Custom Project & Hybrid Architecture (Custom Quote)">08 ── Custom Project &amp; Hybrid Architecture (Custom Quote)</option>
+                <option value="Monthly Retainer Dedicated Partner ($2,800/mo)">Dedicated Engineering Retainer ($2,800/mo)</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Estimated Budget Range (USD)</label>
-              <input type="text" id="clientBudget" class="form-input" placeholder="e.g. $500 - $1,500 USD">
+              <label class="form-label">Estimated Budget Target (USD $)</label>
+              <input type="text" id="clientBudget" class="form-input" placeholder="e.g. $500 - $1,500 USD (Negotiable)">
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label">Project Scope, Requirements &amp; Asset Links *</label>
-            <textarea id="clientScope" class="form-textarea" rows="4" placeholder="Detail your project goals, core deliverables, timeline, or paste Figma / GitHub links..." required></textarea>
+            <textarea id="clientScope" class="form-textarea" rows="4" placeholder="Detail your project specifications, core features, expected timeline, or paste Figma / GitHub / Drive links..." required></textarea>
+          </div>
+
+          <!-- FILE & MEDIA UPLOAD ZONE -->
+          <div class="form-group">
+            <label class="form-label">📎 Attach Media &amp; Brief Files (Images, PDF, Figma, Zip, Mockups - Max 25MB)</label>
+            <div class="file-dropzone" id="dropZone">
+              <input type="file" id="clientFiles" class="file-input-hidden" multiple accept="image/*,.pdf,.doc,.docx,.zip,.fig,.txt,.json">
+              <div style="font-size: 26px; margin-bottom: 6px;">📂</div>
+              <div class="font-mono" style="font-size: 13px; color: #CBD5E1;">
+                <strong>Click to browse files</strong> or drag and drop here
+              </div>
+              <div style="font-size: 11px; color: #94A3B8; margin-top: 4px;" class="font-mono">
+                PNG, JPG, WEBP, PDF, FIG, ZIP (Delivered directly into Discord Deal Feed)
+              </div>
+              <div id="fileListPreview" class="file-list-preview font-mono"></div>
+            </div>
           </div>
 
           <button type="submit" id="submitBtn" class="btn btn-lime" style="width:100%;">
-            <span>🚀 TRANSMIT BRIEF TO DISCORD KITCHEN</span>
+            <span>🚀 TRANSMIT BRIEF &amp; FILES TO DISCORD KITCHEN</span>
           </button>
           <div id="formStatus" class="form-status font-mono"></div>
         </form>
@@ -1411,7 +1485,26 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Webhook Form Submission
+    // File selection preview
+    const fileInput = document.getElementById('clientFiles');
+    const fileListPreview = document.getElementById('fileListPreview');
+    if (fileInput) {
+      fileInput.addEventListener('change', () => {
+        fileListPreview.innerHTML = '';
+        if (fileInput.files.length > 0) {
+          for (let i = 0; i < fileInput.files.length; i++) {
+            const f = fileInput.files[i];
+            const sizeKb = (f.size / 1024).toFixed(1);
+            const span = document.createElement('span');
+            span.className = 'file-item';
+            span.textContent = `📎 ${f.name} (${sizeKb} KB)`;
+            fileListPreview.appendChild(span);
+          }
+        }
+      });
+    }
+
+    // Webhook Form Submission with Multipart File Attachments
     const WEBHOOK_URL = 'https://discord.com/api/webhooks/1566120950465040395/znimEBxtSS189fryOlh-c5czK11TgbBby4USN93GE8j8BOcz5xSuQ0c-xFbbtOJpqzbu';
     const form = document.getElementById('leadForm');
     const statusDiv = document.getElementById('formStatus');
@@ -1420,7 +1513,7 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
-      submitBtn.innerText = 'TRANSMITTING BRIEF...';
+      submitBtn.innerText = 'TRANSMITTING BRIEF & ATTACHMENTS...';
 
       const name = document.getElementById('clientName').value;
       const contact = document.getElementById('clientContact').value;
@@ -1429,37 +1522,47 @@
       const scope = document.getElementById('clientScope').value;
 
       const payload = {
-        username: 'Mantra Labs Website Concierge',
-        avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
-        content: '🚨 **[WEBSITE LEAD DISPATCH]** New project intake received from web portfolio!',
+        username: 'Mantra Web Concierge',
+        avatar_url: 'https://mantralabs.web.id/figma_artboard_preview.png',
+        content: '🚨 **[NEW CLIENT COMMISSION RECEIVED]** New brief & files dispatched from mantralabs.web.id!',
         embeds: [{
           title: '🌐 NEW CLIENT BRIEF FROM PORTFOLIO WEB',
           color: 0x00FFA3,
           fields: [
             { name: '👤 Client / Entity', value: name, inline: true },
             { name: '📬 Contact / Email / Discord', value: contact, inline: true },
-            { name: '🛠️ Service Domain', value: domain, inline: false },
-            { name: '💰 Budget Range', value: budget, inline: true },
+            { name: '🛠️ Requested Service', value: `\`${domain}\``, inline: false },
+            { name: '💰 Budget Target', value: `\`${budget}\``, inline: true },
             { name: '📝 Scope & Requirements', value: scope, inline: false }
           ],
-          footer: { text: 'Transmitted via Mantra Labs Website Webhook' },
+          footer: { text: 'Mantra Labs Automation Gateway • Direct Delivery' },
           timestamp: new Date().toISOString()
         }]
       };
 
       try {
+        const formData = new FormData();
+        formData.append('payload_json', JSON.stringify(payload));
+
+        if (fileInput && fileInput.files.length > 0) {
+          const maxFiles = Math.min(fileInput.files.length, 5);
+          for (let i = 0; i < maxFiles; i++) {
+            formData.append(`files[${i}]`, fileInput.files[i]);
+          }
+        }
+
         const res = await fetch(WEBHOOK_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: formData
         });
 
         if (res.ok) {
           statusDiv.style.display = 'block';
           statusDiv.style.borderColor = '#00FF66';
           statusDiv.style.color = '#00FF66';
-          statusDiv.innerHTML = '✔ <strong>BRIEF TRANSMITTED!</strong><br>Our Lead Engineer has received your specifications in our Discord production feed. We will reach out to you within 2 hours.';
+          statusDiv.innerHTML = '✔ <strong>BRIEF &amp; ASSETS TRANSMITTED!</strong><br>Our Lead Engineer has received your specifications and files in our Discord production feed. We will review and follow up within 2 hours.';
           form.reset();
+          if (fileListPreview) fileListPreview.innerHTML = '';
         } else {
           throw new Error('Transmission failed');
         }
@@ -1470,7 +1573,7 @@
         statusDiv.innerHTML = '⚠️ Transmission delay. Please launch directly into our <a href="https://discord.gg/KrVzydPbHQ" target="_blank" style="color:#00F0FF;text-decoration:underline;">Discord Deal Room</a> or email contact@mantralabs.web.id.';
       } finally {
         submitBtn.disabled = false;
-        submitBtn.innerText = '🚀 TRANSMIT BRIEF TO DISCORD KITCHEN';
+        submitBtn.innerText = '🚀 TRANSMIT BRIEF & FILES TO DISCORD KITCHEN';
       }
     });
   </script>
