@@ -657,6 +657,32 @@
       line-height: 1.5;
     }
 
+    
+    .weapon-price-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border: 1px solid #000;
+      box-shadow: 2px 2px 0px #000;
+    }
+    .weapon-meta {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #CBD5E1;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .weapon-rate-highlight {
+      color: var(--yellow);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
     /* TESTIMONIALS SECTION */
     .reviews-grid {
       display: grid;
@@ -1037,12 +1063,13 @@
     </section>
 
     <!-- 7 CORE WEAPONS CAPABILITIES -->
+        <!-- 7 CORE WEAPONS CAPABILITIES & DIRECT RATES -->
     <section id="weapons">
       <div class="section-header">
         <div class="section-title font-title">
-          <span>THE 7 CORE CAPABILITIES</span>
+          <span>THE 7 CORE CAPABILITIES &amp; RATES</span>
         </div>
-        <span class="section-tag tag" style="background:var(--lime);">SERVICE SUITE</span>
+        <span class="section-tag tag" style="background:var(--lime);">SERVICE-SPECIFIC PRICING</span>
       </div>
 
       <div class="weapons-grid">
@@ -1050,84 +1077,112 @@
         <div class="weapon-card" style="border-top: 6px solid var(--lime);">
           <div class="weapon-header">
             <span class="weapon-num font-mono">01 // CORE</span>
-            <span style="font-size: 24px;">🎨</span>
+            <span class="weapon-price-tag tag" style="background:var(--lime); color:#000;">FROM $350 USD</span>
           </div>
-          <h4 class="weapon-title font-title">UI/UX Design &amp; Scalable Design Systems</h4>
+          <h4 class="weapon-title font-title">🎨 UI/UX Design &amp; Scalable Design Systems</h4>
           <p class="weapon-desc font-body">
-            Production-ready Figma architectures, interactive clickable prototypes, micro-interactions, responsive mobile/web layouts, scalable design tokens, and comprehensive component libraries ready for developer handoff.
+            Production-ready Figma architectures, clickable prototypes, micro-interactions, responsive mobile/web layouts, design tokens, and comprehensive component libraries ready for developer handoff.
           </p>
+          <div class="weapon-meta font-mono">
+            <span>⏱️ Turnaround: 3-5 Days</span>
+            <span class="weapon-rate-highlight">Scope: $350 - $750 USD</span>
+          </div>
         </div>
 
         <!-- Weapon 02 -->
         <div class="weapon-card" style="border-top: 6px solid var(--cyan);">
           <div class="weapon-header">
             <span class="weapon-num font-mono">02 // AI FLAGSHIP</span>
-            <span style="font-size: 24px;">🤖</span>
+            <span class="weapon-price-tag tag" style="background:var(--cyan); color:#000;">FROM $650 USD</span>
           </div>
-          <h4 class="weapon-title font-title">Hermes Autonomous Agent Deployment</h4>
+          <h4 class="weapon-title font-title">🤖 Hermes Autonomous AI Agent Deployment</h4>
           <p class="weapon-desc font-body">
             Private, self-hosted autonomous AI agent setups (Hermes) on your VPS or dedicated hardware. Features persistent long-term memory, multi-agent kanban pipelines, custom toolsets, and local or cloud LLM integration without SaaS vendor lock-in.
           </p>
+          <div class="weapon-meta font-mono">
+            <span>⏱️ Turnaround: 5-7 Days</span>
+            <span class="weapon-rate-highlight">Scope: $650 - $1,400 USD</span>
+          </div>
         </div>
 
         <!-- Weapon 03 -->
         <div class="weapon-card" style="border-top: 6px solid var(--pink);">
           <div class="weapon-header">
             <span class="weapon-num font-mono">03 // FRONTEND</span>
-            <span style="font-size: 24px;">💻</span>
+            <span class="weapon-price-tag tag" style="background:var(--pink); color:#fff;">FROM $450 USD</span>
           </div>
-          <h4 class="weapon-title font-title">High-Converting Web &amp; Landing Pages</h4>
+          <h4 class="weapon-title font-title">💻 High-Converting Web &amp; Landing Pages</h4>
           <p class="weapon-desc font-body">
             Pixel-perfect Figma-to-Code engineering: Neo-Brutalism, Dark Mode SaaS, Next.js 15, React, Tailwind CSS, high-performance micro-animations, 95+ Google PageSpeed, and technical SEO baked in.
           </p>
+          <div class="weapon-meta font-mono">
+            <span>⏱️ Turnaround: 4-7 Days</span>
+            <span class="weapon-rate-highlight">Scope: $450 - $950 USD</span>
+          </div>
         </div>
 
         <!-- Weapon 04 -->
         <div class="weapon-card" style="border-top: 6px solid var(--yellow);">
           <div class="weapon-header">
             <span class="weapon-num font-mono">04 // AUTOMATION</span>
-            <span style="font-size: 24px;">💬</span>
+            <span class="weapon-price-tag tag" style="background:var(--yellow); color:#000;">FROM $300 USD</span>
           </div>
-          <h4 class="weapon-title font-title">Discord &amp; Telegram AI Automation</h4>
+          <h4 class="weapon-title font-title">💬 Discord &amp; Telegram AI Automation</h4>
           <p class="weapon-desc font-body">
             Intelligent community and enterprise bot infrastructure: automated concierge intake, smart auto-ticketing, bi-directional webhooks, and private LLM fine-tuned personas with granular role-based access.
           </p>
+          <div class="weapon-meta font-mono">
+            <span>⏱️ Turnaround: 2-4 Days</span>
+            <span class="weapon-rate-highlight">Scope: $300 - $600 USD</span>
+          </div>
         </div>
 
         <!-- Weapon 05 -->
         <div class="weapon-card" style="border-top: 6px solid var(--lime);">
           <div class="weapon-header">
             <span class="weapon-num font-mono">05 // MEDIA ENGINE</span>
-            <span style="font-size: 24px;">🎬</span>
+            <span class="weapon-price-tag tag" style="background:var(--lime); color:#000;">FROM $400 USD</span>
           </div>
-          <h4 class="weapon-title font-title">Programmatic Video &amp; Batch Pipelines</h4>
+          <h4 class="weapon-title font-title">🎬 Programmatic Video &amp; Batch Pipelines</h4>
           <p class="weapon-desc font-body">
             Industrial-scale media automation: automated batch video compilers (FFmpeg + Kokoro/ElevenLabs TTS), dynamic captioning, and programmatic render engines built for high-volume YouTube Shorts, Reels, and TikTok.
           </p>
+          <div class="weapon-meta font-mono">
+            <span>⏱️ Turnaround: 3-5 Days</span>
+            <span class="weapon-rate-highlight">Scope: $400 - $850 USD</span>
+          </div>
         </div>
 
         <!-- Weapon 06 -->
         <div class="weapon-card" style="border-top: 6px solid var(--cyan);">
           <div class="weapon-header">
             <span class="weapon-num font-mono">06 // DATA ENGINE</span>
-            <span style="font-size: 24px;">🕷️</span>
+            <span class="weapon-price-tag tag" style="background:var(--cyan); color:#000;">FROM $300 USD</span>
           </div>
-          <h4 class="weapon-title font-title">Web Scraping &amp; Enterprise Extraction</h4>
+          <h4 class="weapon-title font-title">🕷️ Web Scraping &amp; Enterprise Extraction</h4>
           <p class="weapon-desc font-body">
             Resilient anti-bot web scrapers, dynamic browser automation (Playwright/CDP), e-commerce price tracking, targeted lead generation engines, and automated sync to Google Sheets, Supabase, or Notion.
           </p>
+          <div class="weapon-meta font-mono">
+            <span>⏱️ Turnaround: 2-4 Days</span>
+            <span class="weapon-rate-highlight">Scope: $300 - $650 USD</span>
+          </div>
         </div>
 
         <!-- Weapon 07 -->
         <div class="weapon-card" style="border-top: 6px solid var(--pink);">
           <div class="weapon-header">
             <span class="weapon-num font-mono">07 // BACKEND</span>
-            <span style="font-size: 24px;">⚙️</span>
+            <span class="weapon-price-tag tag" style="background:var(--pink); color:#fff;">FROM $450 USD</span>
           </div>
-          <h4 class="weapon-title font-title">Internal Tools &amp; Micro-Backends</h4>
+          <h4 class="weapon-title font-title">⚙️ Internal Tools &amp; Micro-Backends</h4>
           <p class="weapon-desc font-body">
             Tailor-made admin dashboards, specialized file processing engines, and third-party API orchestration (Stripe, Cloudflare, S3, custom webhooks) engineered to eliminate operational friction.
           </p>
+          <div class="weapon-meta font-mono">
+            <span>⏱️ Turnaround: 4-6 Days</span>
+            <span class="weapon-rate-highlight">Scope: $450 - $900 USD</span>
+          </div>
         </div>
       </div>
     </section>
