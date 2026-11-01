@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEO-PORTFOLIO // RETRO TECH EDITION</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@700&family=Space+Mono:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0B10;
+      --card-bg: #12141F;
+      --card-alt: #181B2B;
+      --black: #000000;
+      --white: #FFFFFF;
+      --lime: #00FF66;
+      --cyan: #00F0FF;
+      --pink: #FF007F;
+      --yellow: #FFE600;
+      --border: 3px solid #000000;
+      --border-thin: 2px solid #000000;
+      --shadow-sm: 4px 4px 0px #000000;
+      --shadow-md: 6px 6px 0px #000000;
+      --shadow-lg: 8px 8px 0px #000000;
+    }
+
+    /* TYPOGRAPHY (PAKET C) */
+    /* Judul: Space Grotesk (700) */
+    h1, h2, h3, h4, .font-title {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.5px;
+    }
+
+    /* Isi / Paragraf: DM Sans (400) */
+    body, p, span, div, li, .font-body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-weight: 400;
+    }
+
+    /* Tag / Tombol / Label: Space Mono (400) */
+    .btn, .tag, .badge, .ticker, .font-mono, .stat-label, .price-type, .price-period, nav a {
+      font-family: 'Space Mono', monospace !important;
+      font-weight: 400 !important;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      color: var(--white);
+      min-height: 100vh;
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* TOP LIVE TICKER */
+    .ticker {
+      background: var(--yellow);
+      color: var(--black);
+      border-bottom: var(--border);
+      padding: 10px 0;
+      font-size: 13px;
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+    .ticker-track {
+      display: inline-block;
+      animation: ticker-scroll 22s linear infinite;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      margin: 24px auto 32px;
+      padding: 16px 24px;
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+    }
+    .brand-tag {
+      background: var(--lime);
+      color: var(--black);
+      font-size: 11px;
+      padding: 3px 8px;
+      border: 2px solid var(--black);
+      box-shadow: 2px 2px 0px var(--black);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+    }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 2px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .nav-links a:hover {
+      background: var(--cyan);
+      color: var(--black);
+      border: 2px solid var(--black);
+      box-shadow: 3px 3px 0px var(--black);
+      transform: translate(-2px, -2px);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: all 0.1s ease;
+      letter-spacing: 0.5px;
+    }
+    .btn:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0px var(--black);
+    }
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--black);
+    }
+    .btn-lime { background: var(--lime); color: var(--black); }
+    .btn-cyan { background: var(--cyan); color: var(--black); }
+    .btn-pink { background: var(--pink); color: var(--white); }
+    .btn-yellow { background: var(--yellow); color: var(--black); }
+
+    /* HERO BENTO SECTION */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    .hero-main {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-lg);
+      padding: 44px 36px;
+      position: relative;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #002910;
+      border: 2px solid var(--lime);
+      color: var(--lime);
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      box-shadow: 3px 3px 0px var(--black);
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--lime);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--lime);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    h1.hero-title {
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .highlight-lime {
+      background: var(--lime);
+      color: var(--black);
+      padding: 0 8px;
+      border: 2px solid var(--black);
+      display: inline-block;
+    }
+    .highlight-pink {
+      background: var(--pink);
+      color: var(--white);
+      padding: 0 8px;
+      border: 2px solid var(--black);
+      display: inline-block;
+    }
+
+    p.hero-desc {
+      font-size: 17px;
+      color: #A0AEC0;
+      line-height: 1.6;
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* ASIDE BENTO BOXES */
+    .hero-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .bento-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 24px;
+      position: relative;
+    }
+    .bento-card-header {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-pink-header { color: var(--pink); }
+    .card-cyan-header { color: var(--cyan); }
+    .card-yellow-header { color: var(--yellow); }
+
+    /* CLOCK & TIMEZONE */
+    .timezone-box {
+      background: #001A24;
+      border: 2px solid var(--cyan);
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+    .clock-display {
+      font-size: 26px;
+      color: var(--cyan);
+      letter-spacing: 2px;
+    }
+    .tz-info {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* STATS STRIP */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+    .stat-card {
+      background: var(--card-alt);
+      border: var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 20px;
+      border-left: 8px solid var(--lime);
+    }
+    .stat-card:nth-child(2) { border-left-color: var(--cyan); }
+    .stat-card:nth-child(3) { border-left-color: var(--pink); }
+    .stat-card:nth-child(4) { border-left-color: var(--yellow); }
+    .stat-num {
+      font-size: 38px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #94A3B8;
+      text-transform: uppercase;
+    }
+
+    /* SECTION TITLE */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: var(--border);
+      padding-bottom: 12px;
+    }
+    .section-title {
+      font-size: 28px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-tag {
+      background: var(--cyan);
+      color: var(--black);
+      font-size: 11px;
+      padding: 4px 10px;
+      border: 2px solid var(--black);
+    }
+
+    /* PROJECTS BENTO GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 10px 10px 0px var(--black);
+    }
+    .project-visual {
+      background: #000;
+      border-bottom: var(--border);
+      height: 200px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .project-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--lime);
+      color: var(--black);
+      border: 2px solid var(--black);
+      font-size: 11px;
+      padding: 4px 8px;
+      box-shadow: 2px 2px 0px var(--black);
+    }
+    .project-role {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--black);
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+    .project-content {
+      padding: 24px;
+    }
+    .project-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .project-desc {
+      font-size: 14px;
+      color: #94A3B8;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .tech-pill {
+      background: var(--card-alt);
+      border: 1px solid #334155;
+      color: #CBD5E1;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+    .project-footer {
+      padding: 16px 24px;
+      border-top: var(--border);
+      background: var(--card-alt);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-link {
+      font-size: 13px;
+      color: var(--lime);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* REMOTE CAPABILITIES BENTO (WHY ASYNC) */
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 850px) {
+      .capabilities-grid { grid-template-columns: 1fr; }
+    }
+    .cap-box {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+    }
+    .cap-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .cap-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .cap-desc {
+      font-size: 14px;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+
+    /* PRICING & ENGAGEMENT MATRIX */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .price-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .price-card.featured {
+      border: 3px solid var(--yellow);
+      box-shadow: 8px 8px 0px var(--yellow);
+    }
+    .price-type {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #94A3B8;
+    }
+    .price-amount {
+      font-size: 44px;
+      margin: 12px 0 6px;
+      color: var(--white);
+    }
+    .price-period {
+      font-size: 13px;
+      color: #64748B;
+      margin-bottom: 20px;
+    }
+    .feature-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .feature-list li {
+      font-size: 13px;
+      color: #CBD5E1;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-list li::before {
+      content: '✔';
+      color: var(--lime);
+      font-family: monospace;
+    }
+
+    /* DIRECT CONTACT BAR */
+    .contact-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-lg);
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--lime), var(--cyan), var(--pink), var(--yellow));
+    }
+    .contact-title {
+      font-size: clamp(28px, 4vw, 44px);
+      margin-bottom: 12px;
+    }
+    .contact-desc {
+      font-size: 16px;
+      color: #A0AEC0;
+      max-width: 540px;
+      margin: 0 auto 28px;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 12px;
+      color: #64748B;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LIVE STATUS TICKER (SPACE MONO 400) -->
+  <div class="ticker">
+    <div class="ticker-track">
+      // 🟢 STATUS: AVAILABLE FOR REMOTE ROLES (GLOBAL / US / EU TIMEZONES) // ⚡ ASYNC-FIRST OPERATOR // 🛠️ FULL-STACK SOFTWARE &amp; AUTOMATION // 🚀 99.8% SPRINT VELOCITY // 🎯 ACCEPTING NEW CONTRACTS // 🟢 STATUS: AVAILABLE FOR REMOTE ROLES //
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="brand font-title">
+        <span>DXISA.DEV</span>
+        <span class="brand-tag">REMOTE READY</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#work">PROJECTS</a>
+        <a href="#capabilities">CAPABILITIES</a>
+        <a href="#engagement">RATES</a>
+        <a href="#contact" style="background:var(--yellow); color:#000; border:2px solid #000; box-shadow:3px 3px 0px #000;">LET'S TALK</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-grid">
+      <div class="hero-main">
+        <div class="status-badge tag">
+          <div class="status-dot"></div>
+          <span>ACTIVE REMOTE CONTRACTOR • UTC+7 (OVERLAPPING EST/PST)</span>
+        </div>
+        <h1 class="hero-title font-title">
+          FULL-STACK <span class="highlight-lime">SOFTWARE</span> &amp; <span class="highlight-pink">AI WORKFLOW</span> ENGINEER.
+        </h1>
+        <p class="hero-desc font-body">
+          I build high-performance edge web applications, serverless data pipelines, and automated multi-agent engines for founders and remote engineering teams worldwide.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-lime">HIRE FOR NEXT SPRINT ➔</a>
+          <a href="#work" class="btn btn-cyan">VIEW PRODUCTION WORK [04]</a>
+        </div>
+      </div>
+
+      <!-- ASIDE BENTO BOXES -->
+      <div class="hero-aside">
+        <div class="bento-card">
+          <div class="bento-card-header card-cyan-header tag">
+            <span>// TIMEZONE SYNCHRONIZATION</span>
+            <span>LIVE</span>
+          </div>
+          <div class="timezone-box">
+            <div class="clock-display" id="localClock">00:00:00 UTC+7</div>
+            <div class="tz-info font-body">Direct 4-6 hours active overlap with US West (PST), US East (EST), and EU working windows.</div>
+          </div>
+        </div>
+
+        <div class="bento-card" style="border-left: 8px solid var(--pink);">
+          <div class="bento-card-header card-pink-header tag">
+            <span>// WORK ETHOS</span>
+            <span>ASYNC-FIRST</span>
+          </div>
+          <p class="font-body" style="font-size: 14px; color: #CBD5E1; line-height: 1.5;">
+            "No 1-hour meetings that could have been a 3-minute Loom and an audited GitHub Pull Request. Clean code, deterministic tests, and high-velocity shipping."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--lime);">3+ YRS</div>
+        <div class="stat-label">Remote Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--cyan);">50+</div>
+        <div class="stat-label">Production Deployments</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--pink);">180K+</div>
+        <div class="stat-label">End-Users Handled</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--yellow);">&lt; 2H</div>
+        <div class="stat-label">Average Async Response</div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="work">
+      <div class="section-header">
+        <div class="section-title font-title">
+          <span>SELECTED PRODUCTION WORK</span>
+        </div>
+        <span class="section-tag tag">PROVEN ARTIFACTS</span>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #172554);">
+              <div class="project-badge tag">GLOBAL RADAR</div>
+              <div class="project-role tag">FULL-STACK &amp; EDGE</div>
+              <span style="font-size: 48px;">🎮</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title font-title">GameOnRadar.online</h3>
+              <p class="project-desc font-body">
+                Serverless game giveaway &amp; deal tracking engine running 100% on Cloudflare Workers edge. Ranks on Page 1 Google with automatic daily scraper pipeline.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-pill tag">Cloudflare Workers</span>
+                <span class="tech-pill tag">Edge Cache</span>
+                <span class="tech-pill tag">Automated Cron</span>
+                <span class="tech-pill tag">SEO Schema</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="tag" style="font-size:12px; color:#94A3B8;">Live Production</span>
+            <a href="https://gameonradar.online" target="_blank" class="project-link tag">VISIT SITE ➔</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #4c0519);">
+              <div class="project-badge tag" style="background:var(--pink); color:#fff;">HIGH TRAFFIC TOOL</div>
+              <div class="project-role tag">PERFORMANCE OPTIMIZATION</div>
+              <span style="font-size: 48px;">⚡</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title font-title">DownTik.web.id</h3>
+              <p class="project-desc font-body">
+                High-speed serverless video/audio processing tool. Built with zero-storage streaming architecture, serving thousands of daily media conversion requests.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-pill tag">Streaming Media</span>
+                <span class="tech-pill tag">Zero-Storage API</span>
+                <span class="tech-pill tag">JSON-LD Rich Snippet</span>
+                <span class="tech-pill tag">Neobrutalism UI</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="tag" style="font-size:12px; color:#94A3B8;">High Volume Tool</span>
+            <a href="https://downtik.web.id" target="_blank" class="project-link tag">VISIT SITE ➔</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #3f2c00);">
+              <div class="project-badge tag" style="background:var(--yellow); color:#000;">COMMUNITY PORTAL</div>
+              <div class="project-role tag">ARCHITECTURE &amp; CONTENT</div>
+              <span style="font-size: 48px;">🕹️</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title font-title">GomoraGame.my.id</h3>
+              <p class="project-desc font-body">
+                Gaming portal with potato-spec testings, custom graphic settings calculators, and 100/100 Core Web Vitals rating.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-pill tag">Tailwind CSS</span>
+                <span class="tech-pill tag">Cloudflare KV</span>
+                <span class="tech-pill tag">Core Web Vitals 100</span>
+                <span class="tech-pill tag">Automated Sitemap</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="tag" style="font-size:12px; color:#94A3B8;">Content Hub</span>
+            <a href="https://gomoragame.my.id" target="_blank" class="project-link tag">VISIT SITE ➔</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- REMOTE WORK CAPABILITIES -->
+    <section id="capabilities">
+      <div class="section-header">
+        <div class="section-title font-title">
+          <span>REMOTE STACK &amp; CAPABILITIES</span>
+        </div>
+        <span class="section-tag tag" style="background:var(--lime);">TOOLING</span>
+      </div>
+
+      <div class="capabilities-grid">
+        <div class="cap-box" style="border-top: 6px solid var(--lime);">
+          <div class="cap-icon">💻</div>
+          <h4 class="cap-title font-title">Frontend Engineering</h4>
+          <p class="cap-desc font-body">
+            TypeScript, React, Next.js, Tailwind CSS, Responsive Neo-Brutalist &amp; Modern UI/UX, Design Tokens, Web Vitals Optimization (100% SEO, 90+ Mobile LCP/FCP).
+          </p>
+        </div>
+
+        <div class="cap-box" style="border-top: 6px solid var(--cyan);">
+          <div class="cap-icon">☁️</div>
+          <h4 class="cap-title font-title">Edge &amp; Serverless Backend</h4>
+          <p class="cap-desc font-body">
+            Cloudflare Workers &amp; Pages, D1 SQL, KV Cache, Python / Node.js microservices, Fastify, WebSocket relays, RESTful APIs, and webhook infrastructure.
+          </p>
+        </div>
+
+        <div class="cap-box" style="border-top: 6px solid var(--pink);">
+          <div class="cap-icon">🤖</div>
+          <h4 class="cap-title font-title">Autonomous AI &amp; Workflows</h4>
+          <p class="cap-desc font-body">
+            Multi-agent orchestrations, MCP (Model Context Protocol) servers, automated content and media pipelines, and prompt engineering with custom tooling.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT & RATES MATRIX -->
+    <section id="engagement">
+      <div class="section-header">
+        <div class="section-title font-title">
+          <span>ENGAGEMENT MODELS</span>
+        </div>
+        <span class="section-tag tag" style="background:var(--yellow);">TRANSPARENT RATES</span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div>
+            <div class="price-type tag">// HOURLY / FLEXIBLE</div>
+            <div class="price-amount font-title">$35<span style="font-size:18px; color:#94A3B8;">/hr</span></div>
+            <div class="price-period tag">Best for ad-hoc tasks &amp; code reviews</div>
+            <ul class="feature-list font-body">
+              <li>Direct Slack/Discord communication</li>
+              <li>Tracked via Clockify or GitHub Milestones</li>
+              <li>Daily Git commits &amp; async progress notes</li>
+              <li>Zero minimum commitment</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-lime" style="width:100%;">START HOURLY</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="tag" style="position:absolute; top:-14px; right:16px; background:var(--yellow); color:#000; font-size:11px; padding:3px 8px; border:2px solid #000;">
+            RECOMMENDED
+          </div>
+          <div>
+            <div class="price-type tag" style="color:var(--yellow);">// FULL SPRINT CONTRACT</div>
+            <div class="price-amount font-title" style="color:var(--yellow);">$1,200<span style="font-size:18px; color:#94A3B8;">/sprint</span></div>
+            <div class="price-period tag">2-Week Dedicated Sprint (40+ Hours)</div>
+            <ul class="feature-list font-body">
+              <li>Dedicated focus on your feature/MVP</li>
+              <li>End-to-end design, code &amp; edge deployment</li>
+              <li>Async daily video/text updates</li>
+              <li>Continuous testing &amp; documentation</li>
+              <li>Free 1-week post-launch bug warranty</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-yellow" style="width:100%;">BOOK SPRINT ➔</a>
+        </div>
+
+        <div class="price-card">
+          <div>
+            <div class="price-type tag">// MONTHLY RETAINER</div>
+            <div class="price-amount font-title">$2,400<span style="font-size:18px; color:#94A3B8;">/mo</span></div>
+            <div class="price-period tag">Part-Time Dedicated Contractor (20h/week)</div>
+            <ul class="feature-list font-body">
+              <li>Guaranteed weekly availability</li>
+              <li>Full integration with your Jira/Linear board</li>
+              <li>Priority support &amp; emergency bugfixes</li>
+              <li>Direct pair programming on key blockers</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-cyan" style="width:100%;">RESERVE SLOT</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section id="contact" class="contact-card">
+      <h2 class="contact-title font-title">READY TO SHIP SOMETHING EXTRAORDINARY?</h2>
+      <p class="contact-desc font-body">
+        Currently open to global remote contracts, MVP engineering, and frontend/AI engineering roles. Let's discuss your roadmap today.
+      </p>
+      <div class="contact-buttons">
+        <a href="mailto:dxisa13@gmail.com" class="btn btn-lime">
+          <span>✉️ EMAIL: DXISA13@GMAIL.COM</span>
+        </a>
+        <a href="https://github.com/isafrk" target="_blank" class="btn btn-cyan">
+          <span>🐙 GITHUB @ISAFRK</span>
+        </a>
+        <a href="https://t.me/GAMORAGAME" target="_blank" class="btn btn-pink">
+          <span>💬 TELEGRAM DM</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer tag">
+      <p>[ DXISA.DEV ] // RETRO TECH EDITION (PAKET C) // BUILT FOR REMOTE WORK EXCELLENCE &copy; 2026</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'Asia/Jakarta', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const timeStr = now.toLocaleTimeString('en-US', options);
+      const el = document.getElementById('localClock');
+      if (el) el.textContent = timeStr + ' (UTC+7)';
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>

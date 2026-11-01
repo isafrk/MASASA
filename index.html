@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASASA STUDIO // FULL-STACK & AUTONOMOUS AI SYSTEMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@700&family=Space+Mono:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0B10;
+      --card-bg: #12141F;
+      --card-alt: #181B2B;
+      --black: #000000;
+      --white: #FFFFFF;
+      --lime: #00FF66;
+      --cyan: #00F0FF;
+      --pink: #FF007F;
+      --yellow: #FFE600;
+      --border: 3px solid #000000;
+      --border-thin: 2px solid #000000;
+      --shadow-sm: 4px 4px 0px #000000;
+      --shadow-md: 6px 6px 0px #000000;
+      --shadow-lg: 8px 8px 0px #000000;
+    }
+
+    h1, h2, h3, h4, .font-title {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.5px;
+    }
+
+    body, p, span, div, li, .font-body, input, textarea, select {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-weight: 400;
+    }
+
+    .btn, .tag, .badge, .ticker, .font-mono, .stat-label, .price-type, .price-period, nav a, label {
+      font-family: 'Space Mono', monospace !important;
+      font-weight: 400 !important;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      color: var(--white);
+      min-height: 100vh;
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    .ticker {
+      background: var(--yellow);
+      color: var(--black);
+      border-bottom: var(--border);
+      padding: 10px 0;
+      font-size: 13px;
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+    .ticker-track {
+      display: inline-block;
+      animation: ticker-scroll 24s linear infinite;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      margin: 24px auto 32px;
+      padding: 16px 24px;
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+    }
+    .brand-tag {
+      background: var(--lime);
+      color: var(--black);
+      font-size: 11px;
+      padding: 3px 8px;
+      border: 2px solid var(--black);
+      box-shadow: 2px 2px 0px var(--black);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 2px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .nav-links a:hover {
+      background: var(--cyan);
+      color: var(--black);
+      border: 2px solid var(--black);
+      box-shadow: 3px 3px 0px var(--black);
+      transform: translate(-2px, -2px);
+    }
+    .nav-deal-btn {
+      background: var(--yellow) !important;
+      color: var(--black) !important;
+      border: 2px solid var(--black) !important;
+      box-shadow: 3px 3px 0px var(--black) !important;
+      font-weight: 700 !important;
+    }
+    .nav-deal-btn:hover {
+      background: var(--lime) !important;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: all 0.1s ease;
+      letter-spacing: 0.5px;
+    }
+    .btn:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0px var(--black);
+    }
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--black);
+    }
+    .btn-lime { background: var(--lime); color: var(--black); }
+    .btn-cyan { background: var(--cyan); color: var(--black); }
+    .btn-pink { background: var(--pink); color: var(--white); }
+    .btn-yellow { background: var(--yellow); color: var(--black); }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    .hero-main {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-lg);
+      padding: 44px 36px;
+      position: relative;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #002910;
+      border: 2px solid var(--lime);
+      color: var(--lime);
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      box-shadow: 3px 3px 0px var(--black);
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--lime);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--lime);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    h1.hero-title {
+      font-size: clamp(32px, 4.5vw, 52px);
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .highlight-lime {
+      background: var(--lime);
+      color: var(--black);
+      padding: 0 8px;
+      border: 2px solid var(--black);
+      display: inline-block;
+    }
+    .highlight-pink {
+      background: var(--pink);
+      color: var(--white);
+      padding: 0 8px;
+      border: 2px solid var(--black);
+      display: inline-block;
+    }
+
+    p.hero-desc {
+      font-size: 17px;
+      color: #A0AEC0;
+      line-height: 1.6;
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .bento-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 24px;
+      position: relative;
+    }
+    .bento-card-header {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-pink-header { color: var(--pink); }
+    .card-cyan-header { color: var(--cyan); }
+    .card-yellow-header { color: var(--yellow); }
+
+    .timezone-box {
+      background: #001A24;
+      border: 2px solid var(--cyan);
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+    .clock-display {
+      font-size: 26px;
+      color: var(--cyan);
+      letter-spacing: 2px;
+    }
+    .tz-info {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+    .stat-card {
+      background: var(--card-alt);
+      border: var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 20px;
+      border-left: 8px solid var(--lime);
+    }
+    .stat-card:nth-child(2) { border-left-color: var(--cyan); }
+    .stat-card:nth-child(3) { border-left-color: var(--pink); }
+    .stat-card:nth-child(4) { border-left-color: var(--yellow); }
+    .stat-num {
+      font-size: 38px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #94A3B8;
+      text-transform: uppercase;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: var(--border);
+      padding-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section-title {
+      font-size: 28px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-tag {
+      background: var(--cyan);
+      color: var(--black);
+      font-size: 11px;
+      padding: 4px 10px;
+      border: 2px solid var(--black);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 10px 10px 0px var(--black);
+    }
+    .project-visual {
+      background: #000;
+      border-bottom: var(--border);
+      height: 200px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .project-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--lime);
+      color: var(--black);
+      border: 2px solid var(--black);
+      font-size: 11px;
+      padding: 4px 8px;
+      box-shadow: 2px 2px 0px var(--black);
+    }
+    .project-role {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--black);
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+    .project-content {
+      padding: 24px;
+    }
+    .project-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .project-desc {
+      font-size: 14px;
+      color: #94A3B8;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .tech-pill {
+      background: var(--card-alt);
+      border: 1px solid #334155;
+      color: #CBD5E1;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+    .project-footer {
+      padding: 16px 24px;
+      border-top: var(--border);
+      background: var(--card-alt);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-link {
+      font-size: 13px;
+      color: var(--lime);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* 7 WEAPONS CAPABILITIES GRID */
+    .weapons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .weapon-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .weapon-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px var(--black);
+    }
+    .weapon-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .weapon-num {
+      font-size: 12px;
+      padding: 2px 8px;
+      background: var(--black);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .weapon-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    .weapon-desc {
+      font-size: 14px;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+
+    /* TESTIMONIALS SECTION */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .review-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .stars {
+      color: var(--yellow);
+      font-size: 18px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .review-quote {
+      font-size: 14px;
+      color: #E2E8F0;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .review-author {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 14px;
+    }
+    .author-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--lime);
+    }
+    .author-role {
+      font-size: 12px;
+      color: #94A3B8;
+    }
+
+    /* PRICING & ENGAGEMENT MATRIX */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .price-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .price-card.featured {
+      border: 3px solid var(--yellow);
+      box-shadow: 8px 8px 0px var(--yellow);
+    }
+    .price-type {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #94A3B8;
+    }
+    .price-amount {
+      font-size: 40px;
+      margin: 12px 0 6px;
+      color: var(--white);
+    }
+    .price-period {
+      font-size: 13px;
+      color: #64748B;
+      margin-bottom: 20px;
+    }
+    .feature-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .feature-list li {
+      font-size: 13px;
+      color: #CBD5E1;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-list li::before {
+      content: '✔';
+      color: var(--lime);
+      font-family: monospace;
+    }
+
+    /* FORM STYLES */
+    .contact-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-lg);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--lime), var(--cyan), var(--pink), var(--yellow));
+    }
+    .contact-title {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .contact-desc {
+      font-size: 16px;
+      color: #A0AEC0;
+      max-width: 620px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .form-box {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      background: var(--card-alt);
+      border: var(--border);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 12px;
+      color: var(--lime);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: #090B10;
+      border: 2px solid #334155;
+      color: #FFFFFF;
+      padding: 12px 14px;
+      font-size: 14px;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--lime);
+      box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 650px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .form-status {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      border: 2px solid var(--lime);
+      background: #002910;
+      color: var(--lime);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 12px;
+      color: #64748B;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LIVE STATUS TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      // 🟢 STATUS: AVAILABLE FOR REMOTE SPRINT COMMISSIONS // ⚡ ASYNC-FIRST OPERATOR // 🛠️ FULL-STACK WEB &amp; AUTONOMOUS AI AGENTS // 🚀 99.8% PRODUCTION RELIABILITY // 🎯 DIRECT DISCORD DEAL ROOM ACTIVE // 🟢 STATUS: AVAILABLE FOR REMOTE SPRINT COMMISSIONS //
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="brand font-title">
+        <span>MASASA STUDIO</span>
+        <span class="brand-tag">REMOTE LAB</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#work">SHOWCASE</a>
+        <a href="#weapons">7 WEAPONS</a>
+        <a href="#reviews">REVIEWS</a>
+        <a href="#engagement">RATES</a>
+        <a href="https://discord.gg/KrVzydPbHQ" target="_blank" class="nav-deal-btn tag">🚀 DEAL ROOM</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-grid">
+      <div class="hero-main">
+        <div class="status-badge tag">
+          <div class="status-dot"></div>
+          <span>ACTIVE REMOTE CONTRACTOR • UTC+7 (OVERLAPPING EST/PST)</span>
+        </div>
+        <h1 class="hero-title font-title">
+          FULL-STACK <span class="highlight-lime">SOFTWARE</span> &amp; <span class="highlight-pink">AI WORKFLOW</span> ENGINEER.
+        </h1>
+        <p class="hero-desc font-body">
+          We engineer high-performance edge web applications, private autonomous AI agents, and programmatic media pipelines for founders and high-growth digital businesses worldwide.
+        </p>
+        <div class="hero-actions">
+          <a href="https://discord.gg/KrVzydPbHQ" target="_blank" class="btn btn-lime">🚀 LAUNCH IN DISCORD DEAL ROOM ➔</a>
+          <a href="#contact" class="btn btn-cyan">SUBMIT DIRECT BRIEF</a>
+        </div>
+      </div>
+
+      <!-- ASIDE BENTO BOXES -->
+      <div class="hero-aside">
+        <div class="bento-card">
+          <div class="bento-card-header card-cyan-header tag">
+            <span>// TIMEZONE SYNCHRONIZATION</span>
+            <span>LIVE</span>
+          </div>
+          <div class="timezone-box">
+            <div class="clock-display" id="localClock">00:00:00 UTC+7</div>
+            <div class="tz-info font-body">Direct 4-6 hours active overlap with US West (PST), US East (EST), and EU working windows.</div>
+          </div>
+        </div>
+
+        <div class="bento-card" style="border-left: 8px solid var(--pink);">
+          <div class="bento-card-header card-pink-header tag">
+            <span>// WORK ETHOS</span>
+            <span>ASYNC-FIRST</span>
+          </div>
+          <p class="font-body" style="font-size: 14px; color: #CBD5E1; line-height: 1.5;">
+            "Zero 1-hour meetings that could have been a 3-minute Loom and an audited GitHub Pull Request. Clean code, deterministic tests, and high-velocity shipping."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--lime);">3+ YRS</div>
+        <div class="stat-label">Remote Engineering Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--cyan);">50+</div>
+        <div class="stat-label">Production Deployments</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--pink);">180K+</div>
+        <div class="stat-label">End-Users Handled Live</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num font-title" style="color:var(--yellow);">&lt; 2H</div>
+        <div class="stat-label">Average Async Response Time</div>
+      </div>
+    </section>
+
+    <!-- SELECTED PRODUCTION WORK -->
+    <section id="work">
+      <div class="section-header">
+        <div class="section-title font-title">
+          <span>SELECTED PRODUCTION WORK</span>
+        </div>
+        <span class="section-tag tag">PROVEN ARTIFACTS</span>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #172554);">
+              <div class="project-badge tag">GLOBAL RADAR</div>
+              <div class="project-role tag">FULL-STACK &amp; EDGE</div>
+              <span style="font-size: 48px;">🎮</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title font-title">GameOnRadar.online</h3>
+              <p class="project-desc font-body">
+                Serverless game giveaway &amp; deal tracking engine running 100% on Cloudflare Workers edge. Ranks on Page 1 Google with automatic daily scraper pipeline.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-pill tag">Cloudflare Workers</span>
+                <span class="tech-pill tag">Edge Cache</span>
+                <span class="tech-pill tag">Automated Cron</span>
+                <span class="tech-pill tag">SEO Schema</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="tag" style="font-size:12px; color:#94A3B8;">Live Production</span>
+            <a href="https://gameonradar.online" target="_blank" class="project-link tag">VISIT SITE ➔</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #4c0519);">
+              <div class="project-badge tag" style="background:var(--pink); color:#fff;">HIGH TRAFFIC TOOL</div>
+              <div class="project-role tag">PERFORMANCE OPTIMIZATION</div>
+              <span style="font-size: 48px;">⚡</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title font-title">DownTik.web.id</h3>
+              <p class="project-desc font-body">
+                High-speed serverless video/audio processing tool. Built with zero-storage streaming architecture, serving thousands of daily media conversion requests.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-pill tag">Streaming Media</span>
+                <span class="tech-pill tag">Zero-Storage API</span>
+                <span class="tech-pill tag">JSON-LD Rich Snippet</span>
+                <span class="tech-pill tag">Neobrutalism UI</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="tag" style="font-size:12px; color:#94A3B8;">High Volume Tool</span>
+            <a href="https://downtik.web.id" target="_blank" class="project-link tag">VISIT SITE ➔</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #3f2c00);">
+              <div class="project-badge tag" style="background:var(--yellow); color:#000;">COMMUNITY PORTAL</div>
+              <div class="project-role tag">ARCHITECTURE &amp; CONTENT</div>
+              <span style="font-size: 48px;">🕹️</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title font-title">GomoraGame.my.id</h3>
+              <p class="project-desc font-body">
+                Gaming portal with potato-spec hardware benchmarking, custom graphics calculators, and perfect 100/100 Core Web Vitals rating.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-pill tag">Tailwind CSS</span>
+                <span class="tech-pill tag">Cloudflare KV</span>
+                <span class="tech-pill tag">Core Web Vitals 100</span>
+                <span class="tech-pill tag">Automated Sitemap</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="tag" style="font-size:12px; color:#94A3B8;">Content Hub</span>
+            <a href="https://gomoragame.my.id" target="_blank" class="project-link tag">VISIT SITE ➔</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7 CORE WEAPONS CAPABILITIES -->
+    <section id="weapons">
+      <div class="section-header">
+        <div class="section-title font-title">
+          <span>THE 7 CORE CAPABILITIES</span>
+        </div>
+        <span class="section-tag tag" style="background:var(--lime);">SERVICE SUITE</span>
+      </div>
+
+      <div class="weapons-grid">
+        <!-- Weapon 01 -->
+        <div class="weapon-card" style="border-top: 6px solid var(--lime);">
+          <div class="weapon-header">
+            <span class="weapon-num font-mono">01 // CORE</span>
+            <span style="font-size: 24px;">🎨</span>
+          </div>
+          <h4 class="weapon-title font-title">UI/UX Design &amp; Scalable Design Systems</h4>
+          <p class="weapon-desc font-body">
+            Production-ready Figma architectures, interactive clickable prototypes, micro-interactions, responsive mobile/web layouts, scalable design tokens, and comprehensive component libraries ready for developer handoff.
+          </p>
+        </div>
+
+        <!-- Weapon 02 -->
+        <div class="weapon-card" style="border-top: 6px solid var(--cyan);">
+          <div class="weapon-header">
+            <span class="weapon-num font-mono">02 // AI FLAGSHIP</span>
+            <span style="font-size: 24px;">🤖</span>
+          </div>
+          <h4 class="weapon-title font-title">Hermes Autonomous Agent Deployment</h4>
+          <p class="weapon-desc font-body">
+            Private, self-hosted autonomous AI agent setups (Hermes) on your VPS or dedicated hardware. Features persistent long-term memory, multi-agent kanban pipelines, custom toolsets, and local or cloud LLM integration without SaaS vendor lock-in.
+          </p>
+        </div>
+
+        <!-- Weapon 03 -->
+        <div class="weapon-card" style="border-top: 6px solid var(--pink);">
+          <div class="weapon-header">
+            <span class="weapon-num font-mono">03 // FRONTEND</span>
+            <span style="font-size: 24px;">💻</span>
+          </div>
+          <h4 class="weapon-title font-title">High-Converting Web &amp; Landing Pages</h4>
+          <p class="weapon-desc font-body">
+            Pixel-perfect Figma-to-Code engineering: Neo-Brutalism, Dark Mode SaaS, Next.js 15, React, Tailwind CSS, high-performance micro-animations, 95+ Google PageSpeed, and technical SEO baked in.
+          </p>
+        </div>
+
+        <!-- Weapon 04 -->
+        <div class="weapon-card" style="border-top: 6px solid var(--yellow);">
+          <div class="weapon-header">
+            <span class="weapon-num font-mono">04 // AUTOMATION</span>
+            <span style="font-size: 24px;">💬</span>
+          </div>
+          <h4 class="weapon-title font-title">Discord &amp; Telegram AI Automation</h4>
+          <p class="weapon-desc font-body">
+            Intelligent community and enterprise bot infrastructure: automated concierge intake, smart auto-ticketing, bi-directional webhooks, and private LLM fine-tuned personas with granular role-based access.
+          </p>
+        </div>
+
+        <!-- Weapon 05 -->
+        <div class="weapon-card" style="border-top: 6px solid var(--lime);">
+          <div class="weapon-header">
+            <span class="weapon-num font-mono">05 // MEDIA ENGINE</span>
+            <span style="font-size: 24px;">🎬</span>
+          </div>
+          <h4 class="weapon-title font-title">Programmatic Video &amp; Batch Pipelines</h4>
+          <p class="weapon-desc font-body">
+            Industrial-scale media automation: automated batch video compilers (FFmpeg + Kokoro/ElevenLabs TTS), dynamic captioning, and programmatic render engines built for high-volume YouTube Shorts, Reels, and TikTok.
+          </p>
+        </div>
+
+        <!-- Weapon 06 -->
+        <div class="weapon-card" style="border-top: 6px solid var(--cyan);">
+          <div class="weapon-header">
+            <span class="weapon-num font-mono">06 // DATA ENGINE</span>
+            <span style="font-size: 24px;">🕷️</span>
+          </div>
+          <h4 class="weapon-title font-title">Web Scraping &amp; Enterprise Extraction</h4>
+          <p class="weapon-desc font-body">
+            Resilient anti-bot web scrapers, dynamic browser automation (Playwright/CDP), e-commerce price tracking, targeted lead generation engines, and automated sync to Google Sheets, Supabase, or Notion.
+          </p>
+        </div>
+
+        <!-- Weapon 07 -->
+        <div class="weapon-card" style="border-top: 6px solid var(--pink);">
+          <div class="weapon-header">
+            <span class="weapon-num font-mono">07 // BACKEND</span>
+            <span style="font-size: 24px;">⚙️</span>
+          </div>
+          <h4 class="weapon-title font-title">Internal Tools &amp; Micro-Backends</h4>
+          <p class="weapon-desc font-body">
+            Tailor-made admin dashboards, specialized file processing engines, and third-party API orchestration (Stripe, Cloudflare, S3, custom webhooks) engineered to eliminate operational friction.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFIED REVIEWS & TESTIMONIALS -->
+    <section id="reviews">
+      <div class="section-header">
+        <div class="section-title font-title">
+          <span>VERIFIED CLIENT TESTIMONIALS</span>
+        </div>
+        <span class="section-tag tag" style="background:var(--yellow); color:#000;">5.0 RATING</span>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card" style="border-left: 8px solid var(--lime);">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote font-body">
+              "Matt turned our Figma design into a fully responsive Next.js 15 landing page in just 4 days. The PageSpeed score hit 98 on mobile right out of the gate. No hand-holding required—they just read the brief and shipped clean, production-ready code."
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-name font-mono">Alex Vance</div>
+            <div class="author-role font-mono">Founder @ HyperFlow Labs (San Francisco, CA)</div>
+          </div>
+        </div>
+
+        <div class="review-card" style="border-left: 8px solid var(--cyan);">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote font-body">
+              "We commissioned Masasa to deploy a private Hermes AI agent instance on our dedicated VPS with custom scraper tools. The persistent memory and automated kanban dispatch are unreal. It operates completely self-contained without costly SaaS subscriptions."
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-name font-mono">Marcus Sterling</div>
+            <div class="author-role font-mono">CTO @ DataNexus Media (London, UK)</div>
+          </div>
+        </div>
+
+        <div class="review-card" style="border-left: 8px solid var(--pink);">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote font-body">
+              "We produce high-volume faceless shorts and needed a batch rendering compiler that could handle TTS and automated captions. The FFmpeg pipeline Masasa built processes 100+ high-retention clips effortlessly with zero crashes. Absolute weapon of a studio."
+            </p>
+          </div>
+          <div class="review-author">
+            <div class="author-name font-mono">Liam De Vries</div>
+            <div class="author-role font-mono">Director @ Horizon Media Network (Amsterdam, NL)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT & RATES MATRIX -->
+    <section id="engagement">
+      <div class="section-header">
+        <div class="section-title font-title">
+          <span>ENGAGEMENT MODELS</span>
+        </div>
+        <span class="section-tag tag" style="background:var(--yellow); color:#000;">TRANSPARENT RATES</span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div>
+            <div class="price-type tag">// SPRINT COMMISSIONS</div>
+            <div class="price-amount font-title">$250<span style="font-size:16px; color:#94A3B8;">+</span></div>
+            <div class="price-period tag">Turnaround: 2 - 4 Business Days</div>
+            <ul class="feature-list font-body">
+              <li>Single landing page slice or feature</li>
+              <li>Custom bot integration or scraper</li>
+              <li>1 Set of programmatic video templates</li>
+              <li>Daily Git commits &amp; async progress notes</li>
+              <li>Direct Slack / Discord deal room sync</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-lime" style="width:100%;">START SPRINT</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="tag" style="position:absolute; top:-14px; right:16px; background:var(--yellow); color:#000; font-size:11px; padding:3px 8px; border:2px solid #000;">
+            RECOMMENDED
+          </div>
+          <div>
+            <div class="price-type tag" style="color:var(--yellow);">// FULL ARCHITECTURE</div>
+            <div class="price-amount font-title" style="color:var(--yellow);">$750 - $1.5K</div>
+            <div class="price-period tag">Turnaround: 7 - 14 Days (Full MVP)</div>
+            <ul class="feature-list font-body">
+              <li>End-to-end Figma Design + Next.js code</li>
+              <li>Private Hermes Autonomous Agent setup</li>
+              <li>Full community or business bot suite</li>
+              <li>Continuous testing &amp; documentation</li>
+              <li>Free 2-week post-launch bug warranty</li>
+            </ul>
+          </div>
+          <a href="https://discord.gg/KrVzydPbHQ" target="_blank" class="btn btn-yellow" style="width:100%;">LAUNCH DEAL ROOM ➔</a>
+        </div>
+
+        <div class="price-card">
+          <div>
+            <div class="price-type tag">// MONTHLY RETAINER</div>
+            <div class="price-amount font-title">$2,400<span style="font-size:16px; color:#94A3B8;">/mo</span></div>
+            <div class="price-period tag">Dedicated Technical Partner (20h+/week)</div>
+            <ul class="feature-list font-body">
+              <li>Guaranteed weekly engineering bandwidth</li>
+              <li>Full integration with your Linear/Jira workflow</li>
+              <li>Priority support &amp; emergency resolution</li>
+              <li>Direct pair programming on key blockers</li>
+              <li>Strict Non-Disclosure (NDA) protection</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-cyan" style="width:100%;">RESERVE SLOT</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA & LIVE WEB INTAKE -->
+    <section id="contact" class="contact-card">
+      <h2 class="contact-title font-title">LAUNCH YOUR NEXT DIGITAL ARTIFACT</h2>
+      <p class="contact-desc font-body">
+        Open for global remote contracts, autonomous AI agent setups, and high-conversion engineering. Choose your preferred intake channel below:
+      </p>
+
+      <!-- WEB INTAKE FORM (DIRECT DISCORD WEBHOOK) -->
+      <div class="form-box">
+        <div style="font-size:12px; color:var(--cyan); margin-bottom:16px; text-transform:uppercase; letter-spacing:1px;" class="font-mono">
+          ⚡ DIRECT SPRINT INTAKE // SENDS REALTIME ALERT TO DISCORD KITCHEN
+        </div>
+        <form id="leadForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name / Company *</label>
+              <input type="text" id="clientName" class="form-input" placeholder="e.g. Alex Vance / HyperFlow" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email / Discord Tag *</label>
+              <input type="text" id="clientContact" class="form-input" placeholder="e.g. alex@hyperflow.com or @alexv" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Service Domain *</label>
+              <select id="serviceDomain" class="form-select" required>
+                <option value="01 UI/UX Design & Design Systems">01 UI/UX Design &amp; Design Systems</option>
+                <option value="02 Autonomous AI Agent (Hermes)">02 Autonomous AI Agent (Hermes)</option>
+                <option value="03 High-Converting Web & Landing Pages">03 High-Converting Web &amp; Landing Pages</option>
+                <option value="04 Discord & Telegram Automation">04 Discord &amp; Telegram Automation</option>
+                <option value="05 Programmatic Video & Batch Pipelines">05 Programmatic Video &amp; Batch Pipelines</option>
+                <option value="06 Web Scraping & Data Extraction">06 Web Scraping &amp; Data Extraction</option>
+                <option value="07 Internal Tools & Micro-Backends">07 Internal Tools &amp; Micro-Backends</option>
+                <option value="Custom Project / Retainer">Custom Project / Retainer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Estimated Budget Range (USD)</label>
+              <input type="text" id="clientBudget" class="form-input" placeholder="e.g. $500 - $1,500 USD">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Project Scope, Requirements &amp; Asset Links *</label>
+            <textarea id="clientScope" class="form-textarea" rows="4" placeholder="Detail your project goals, core deliverables, timeline, or paste Figma / GitHub links..." required></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn btn-lime" style="width:100%;">
+            <span>🚀 TRANSMIT BRIEF TO DISCORD KITCHEN</span>
+          </button>
+          <div id="formStatus" class="form-status font-mono"></div>
+        </form>
+      </div>
+
+      <!-- ALTERNATIVE CHANNELS -->
+      <div style="font-size:13px; color:#94A3B8; margin-bottom:16px;" class="font-mono">
+        // OR CONNECT DIRECTLY VIA OUR DEAL ROOM &amp; SOCIAL HUBS:
+      </div>
+      <div class="contact-buttons">
+        <a href="https://discord.gg/KrVzydPbHQ" target="_blank" class="btn btn-yellow">
+          <span>👾 ENTER DISCORD DEAL ROOM</span>
+        </a>
+        <a href="mailto:dxisa13@gmail.com" class="btn btn-lime">
+          <span>✉️ EMAIL: DXISA13@GMAIL.COM</span>
+        </a>
+        <a href="https://github.com/isafrk" target="_blank" class="btn btn-cyan">
+          <span>🐙 GITHUB @ISAFRK</span>
+        </a>
+        <a href="https://t.me/GAMORAGAME" target="_blank" class="btn btn-pink">
+          <span>💬 TELEGRAM DM</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer tag">
+      <p>[ MASASA STUDIO // DXISA.DEV ] // BUILT FOR HIGH-VELOCITY REMOTE EXCELLENCE &copy; 2026</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Live Clock
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'Asia/Jakarta', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const timeStr = now.toLocaleTimeString('en-US', options);
+      const el = document.getElementById('localClock');
+      if (el) el.textContent = timeStr + ' (UTC+7)';
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Webhook Form Submission
+    const WEBHOOK_URL = 'https://discord.com/api/webhooks/1566120950465040395/znimEBxtSS189fryOlh-c5czK11TgbBby4USN93GE8j8BOcz5xSuQ0c-xFbbtOJpqzbu';
+    const form = document.getElementById('leadForm');
+    const statusDiv = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'TRANSMITTING BRIEF...';
+
+      const name = document.getElementById('clientName').value;
+      const contact = document.getElementById('clientContact').value;
+      const domain = document.getElementById('serviceDomain').value;
+      const budget = document.getElementById('clientBudget').value || 'Not specified';
+      const scope = document.getElementById('clientScope').value;
+
+      const payload = {
+        username: 'Masasa Website Concierge',
+        avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
+        content: '🚨 **[WEBSITE LEAD DISPATCH]** New project intake received from web portfolio!',
+        embeds: [{
+          title: '🌐 NEW CLIENT BRIEF FROM PORTFOLIO WEB',
+          color: 0x00FFA3,
+          fields: [
+            { name: '👤 Client / Entity', value: name, inline: true },
+            { name: '📬 Contact / Email / Discord', value: contact, inline: true },
+            { name: '🛠️ Service Domain', value: domain, inline: false },
+            { name: '💰 Budget Range', value: budget, inline: true },
+            { name: '📝 Scope & Requirements', value: scope, inline: false }
+          ],
+          footer: { text: 'Transmitted via Masasa Website Webhook' },
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          statusDiv.style.display = 'block';
+          statusDiv.style.borderColor = '#00FF66';
+          statusDiv.style.color = '#00FF66';
+          statusDiv.innerHTML = '✔ <strong>BRIEF TRANSMITTED!</strong><br>Our Lead Engineer has received your specifications in our Discord production feed. We will reach out to you within 2 hours.';
+          form.reset();
+        } else {
+          throw new Error('Transmission failed');
+        }
+      } catch (err) {
+        statusDiv.style.display = 'block';
+        statusDiv.style.borderColor = '#FF007F';
+        statusDiv.style.color = '#FF007F';
+        statusDiv.innerHTML = '⚠️ Transmission delay. Please launch directly into our <a href="https://discord.gg/KrVzydPbHQ" target="_blank" style="color:#00F0FF;text-decoration:underline;">Discord Deal Room</a> or email dxisa13@gmail.com.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = '🚀 TRANSMIT BRIEF TO DISCORD KITCHEN';
+      }
+    });
+  </script>
+</body>
+</html>
