@@ -10,19 +10,22 @@
   <style>
     :root {
       --bg: #0A0B10;
-      --card-bg: #12141F;
-      --card-alt: #181B2B;
+      --card-bg: #111422;
+      --card-alt: #161A2E;
       --black: #000000;
       --white: #FFFFFF;
       --lime: #00FF66;
       --cyan: #00F0FF;
       --pink: #FF007F;
       --yellow: #FFE600;
-      --border: 3px solid #000000;
-      --border-thin: 2px solid #000000;
-      --shadow-sm: 4px 4px 0px #000000;
-      --shadow-md: 6px 6px 0px #000000;
-      --shadow-lg: 8px 8px 0px #000000;
+      --border: 2px solid rgba(255, 255, 255, 0.16);
+      --border-thin: 1px solid rgba(255, 255, 255, 0.12);
+      --border-focus: 2px solid #00F0FF;
+      --shadow-sm: 4px 4px 0px #000000, 4px 4px 0px 1px rgba(255, 255, 255, 0.08);
+      --shadow-md: 6px 6px 0px #000000, 6px 6px 0px 1px rgba(255, 255, 255, 0.12);
+      --shadow-lg: 8px 8px 0px #000000, 8px 8px 0px 1px rgba(255, 255, 255, 0.16);
+      --shadow-lime: 5px 5px 0px #00FF66;
+      --shadow-cyan: 5px 5px 0px #00F0FF;
     }
 
     h1, h2, h3, h4, .font-title {
@@ -98,6 +101,52 @@
       padding: 0 20px;
     }
 
+        .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      background: var(--card-alt);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      box-shadow: 3px 3px 0px #000;
+      transition: all 0.15s ease;
+    }
+    .nav-toggle:hover {
+      border-color: var(--lime);
+      transform: translate(-1px, -1px);
+    }
+    .nav-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: var(--lime);
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+    @media (max-width: 860px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 16px;
+        margin-top: 8px;
+        border-top: 1px dashed rgba(255, 255, 255, 0.15);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        text-align: center;
+        padding: 12px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
     .navbar {
       margin: 24px auto 32px;
       padding: 16px 24px;
@@ -358,6 +407,29 @@
       border: 2px solid var(--black);
     }
 
+    
+    .project-visual {
+      background: #000;
+      border-bottom: var(--border);
+      height: 220px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .project-preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
+    }
+    .project-card:hover .project-preview-img {
+      transform: scale(1.05);
+    }
+    
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -708,14 +780,19 @@
     <!-- NAVBAR -->
     <header class="navbar">
       <div class="brand font-title">
-        <span>MASASA STUDIO</span>
+        <span style="letter-spacing:-0.5px;">MANTRA LABS</span>
         <span class="brand-tag">REMOTE LAB</span>
       </div>
-      <nav class="nav-links">
-        <a href="#work">SHOWCASE</a>
-        <a href="#weapons">7 WEAPONS</a>
-        <a href="#reviews">REVIEWS</a>
-        <a href="#engagement">RATES</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Mobile Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#work" onclick="document.getElementById('navLinks').classList.remove('open')">SHOWCASE</a>
+        <a href="#weapons" onclick="document.getElementById('navLinks').classList.remove('open')">7 WEAPONS</a>
+        <a href="/news/" onclick="document.getElementById('navLinks').classList.remove('open')">AI RADAR</a>
+        <a href="https://tools.mantralabs.web.id" target="_blank" style="color:var(--cyan);">FREE TOOLS ➔</a>
+        <a href="#reviews" onclick="document.getElementById('navLinks').classList.remove('open')">REVIEWS</a>
+        <a href="#engagement" onclick="document.getElementById('navLinks').classList.remove('open')">RATES</a>
         <a href="https://discord.gg/KrVzydPbHQ" target="_blank" class="nav-deal-btn tag">🚀 DEAL ROOM</a>
       </nav>
     </header>
@@ -790,17 +867,17 @@
         <div class="section-title font-title">
           <span>SELECTED PRODUCTION WORK</span>
         </div>
-        <span class="section-tag tag">PROVEN ARTIFACTS</span>
+        <span class="section-tag tag">PROVEN LIVE SYSTEMS</span>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1: GameOnRadar -->
         <article class="project-card">
           <div>
-            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #172554);">
+            <div class="project-visual">
+              <img src="preview_gameonradar.png" alt="GameOnRadar.online Live Production Preview" class="project-preview-img" loading="lazy">
               <div class="project-badge tag">GLOBAL RADAR</div>
               <div class="project-role tag">FULL-STACK &amp; EDGE</div>
-              <span style="font-size: 48px;">🎮</span>
             </div>
             <div class="project-content">
               <h3 class="project-title font-title">GameOnRadar.online</h3>
@@ -821,13 +898,13 @@
           </div>
         </article>
 
-        <!-- Project 2 -->
+        <!-- Project 2: DownTik -->
         <article class="project-card">
           <div>
-            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #4c0519);">
+            <div class="project-visual">
+              <img src="preview_downtik.png" alt="DownTik.web.id Live Production Preview" class="project-preview-img" loading="lazy">
               <div class="project-badge tag" style="background:var(--pink); color:#fff;">HIGH TRAFFIC TOOL</div>
               <div class="project-role tag">PERFORMANCE OPTIMIZATION</div>
-              <span style="font-size: 48px;">⚡</span>
             </div>
             <div class="project-content">
               <h3 class="project-title font-title">DownTik.web.id</h3>
@@ -848,18 +925,18 @@
           </div>
         </article>
 
-        <!-- Project 3 -->
+        <!-- Project 3: GomoraGame -->
         <article class="project-card">
           <div>
-            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #3f2c00);">
+            <div class="project-visual">
+              <img src="preview_gomora.png" alt="GomoraGame.my.id Live Production Preview" class="project-preview-img" loading="lazy">
               <div class="project-badge tag" style="background:var(--yellow); color:#000;">COMMUNITY PORTAL</div>
               <div class="project-role tag">ARCHITECTURE &amp; CONTENT</div>
-              <span style="font-size: 48px;">🕹️</span>
             </div>
             <div class="project-content">
               <h3 class="project-title font-title">GomoraGame.my.id</h3>
               <p class="project-desc font-body">
-                Gaming portal with potato-spec hardware benchmarking, custom graphics calculators, and perfect 100/100 Core Web Vitals rating.
+                Indonesian gaming portal with potato-spec hardware benchmarking, custom graphics calculators, and perfect 100/100 Core Web Vitals rating.
               </p>
               <div class="tech-tags">
                 <span class="tech-pill tag">Tailwind CSS</span>
@@ -872,6 +949,33 @@
           <div class="project-footer">
             <span class="tag" style="font-size:12px; color:#94A3B8;">Content Hub</span>
             <a href="https://gomoragame.my.id" target="_blank" class="project-link tag">VISIT SITE ➔</a>
+          </div>
+        </article>
+
+        <!-- Project 4: Mantra Tools -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual" style="background: linear-gradient(135deg, #090B10, #042f2e);">
+              <div class="project-badge tag" style="background:var(--cyan); color:#000;">MICRO SAAS SUITE</div>
+              <div class="project-role tag">CLIENT-SIDE UTILITIES</div>
+              <span style="font-size: 54px; z-index: 1;">🛠️</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title font-title">tools.mantralabs.web.id</h3>
+              <p class="project-desc font-body">
+                12 sovereign, zero-server browser micro-tools for creators and AI developers: prompt chunking, 50-tag stock metadata, EXIF wiper, SVG optimizer, and Web Crypto.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-pill tag">React 19 + Vite</span>
+                <span class="tech-pill tag">Cloudflare Pages</span>
+                <span class="tech-pill tag">Zero-Server</span>
+                <span class="tech-pill tag">Web Crypto API</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="tag" style="font-size:12px; color:#94A3B8;">Free Public Suite</span>
+            <a href="https://tools.mantralabs.web.id" target="_blank" class="project-link tag">LAUNCH TOOLS ➔</a>
           </div>
         </article>
       </div>
@@ -1165,7 +1269,7 @@
 
     <!-- FOOTER -->
     <footer class="footer tag">
-      <p>[ MASASA STUDIO // DXISA.DEV ] // BUILT FOR HIGH-VELOCITY REMOTE EXCELLENCE &copy; 2026</p>
+      <p>[ MANTRA LABS // MANTRALABS.WEB.ID ] // BUILT FOR HIGH-VELOCITY REMOTE EXCELLENCE &copy; 2026</p>
     </footer>
 
   </div>
