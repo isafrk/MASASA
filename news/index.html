@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANTRA LABS AI RADAR // Autonomous Intelligence & Research Dispatches</title>
+  <meta name="description" content="Continuous surveillance on breakthroughs, open-source weights, agent architectures, and AI industry disruption. Zero-fluff technical dispatches by Mantra Labs.">
+  <meta name="keywords" content="AI news, machine learning radar, LLM research, Hugging Face papers, TechCrunch AI, Hacker News AI, Mantra Labs">
+  <link rel="canonical" href="https://mantralabs.web.id/news/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mantra Labs AI Radar // Autonomous Intelligence & Research Dispatches">
+  <meta property="og:description" content="Continuous surveillance on breakthroughs, open-source weights, agent architectures, and AI industry disruption.">
+  <meta property="og:url" content="https://mantralabs.web.id/news/">
+  <meta property="og:image" content="https://mantralabs.web.id/figma_artboard_preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@700&family=Space+Mono:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0A0B10;
+      --card-bg: #12141F;
+      --card-alt: #181B2B;
+      --black: #000000;
+      --white: #FFFFFF;
+      --lime: #00FF66;
+      --cyan: #00F0FF;
+      --pink: #FF007F;
+      --yellow: #FFE600;
+      --border: 3px solid #000000;
+      --shadow-md: 6px 6px 0px #000000;
+      --shadow-lg: 8px 8px 0px #000000;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      color: var(--white);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    
+    .ticker {
+      background: var(--yellow);
+      color: var(--black);
+      border-bottom: var(--border);
+      padding: 10px 0;
+      font-size: 13px;
+      font-family: 'Space Mono', monospace;
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+    .ticker-track {
+      display: inline-block;
+      animation: ticker-scroll 24s linear infinite;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .nav {
+      margin: 24px auto 32px;
+      padding: 16px 24px;
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+    }
+    .brand-tag {
+      background: var(--lime);
+      color: var(--black);
+      font-size: 11px;
+      padding: 2px 6px;
+      font-family: 'Space Mono', monospace;
+      border: 2px solid var(--black);
+    }
+    .nav-links { display: flex; gap: 12px; font-family: 'Space Mono', monospace; font-size: 13px; }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .nav-links a:hover {
+      background: var(--cyan);
+      color: var(--black);
+      border: 2px solid var(--black);
+      box-shadow: 2px 2px 0px var(--black);
+    }
+
+    .hero {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-lg);
+      padding: 40px;
+      margin-bottom: 36px;
+    }
+    .hero-tag {
+      background: var(--cyan);
+      color: var(--black);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      display: inline-block;
+      border: 2px solid var(--black);
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: #9CA3AF;
+      font-size: 16px;
+      max-width: 700px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .news-card {
+      background: var(--card-bg);
+      border: var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s;
+    }
+    .news-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .meta-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+    }
+    .badge {
+      background: var(--lime);
+      color: var(--black);
+      font-weight: 700;
+      padding: 2px 6px;
+      border: 1px solid var(--black);
+    }
+    .cat-pill {
+      background: rgba(0, 240, 255, 0.15);
+      color: var(--cyan);
+      padding: 2px 6px;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+    }
+    .date { color: #9CA3AF; }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 19px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .card-title a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .card-title a:hover { color: var(--cyan); }
+    .card-desc {
+      font-size: 14px;
+      color: #9CA3AF;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+    }
+    .source-tag { color: #6B7280; }
+    .read-btn {
+      color: var(--lime);
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.15s;
+    }
+    .read-btn:hover { text-decoration: underline; color: var(--cyan); }
+  </style>
+</head>
+<body>
+  <div class="ticker">
+    <div class="ticker-track">
+      // 📡 MANTRA LABS AI RADAR ACTIVE // 24/7 SURVEILLANCE OF AI LABS, WEIGHTS, AGENTS &amp; ENTERPRISE DISRUPTIONS // NO BS ENGINEERING INTEL //
+    </div>
+  </div>
+
+  <div class="container">
+    <header class="nav">
+      <a href="/" class="brand">
+        <span>MANTRA LABS</span>
+        <span class="brand-tag">AI RADAR</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">HOME</a>
+        <a href="https://tools.mantralabs.web.id" target="_blank">FREE TOOLS ➔</a>
+        <a href="https://discord.gg/KrVzydPbHQ" target="_blank" style="background:var(--lime);color:var(--black);border:2px solid var(--black);">DEAL ROOM</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <span class="hero-tag">OPERATIONAL INTELLIGENCE</span>
+      <h1>AI RADAR DISPATCHES</h1>
+      <p>
+        Continuous automated surveillance tracking model weight leaks, SOTA benchmarks, enterprise disruption, and developer tooling. Pure engineering signal, zero marketing fluff.
+      </p>
+    </div>
+
+    <div class="news-grid">
+      
+        <div class="news-card">
+          <div class="meta-row">
+            <span class="badge">RESEARCH SOTA</span>
+            <span class="cat-pill">Open-Source & Model Weights</span>
+            <span class="date">November 01, 2026 • 4 min read</span>
+          </div>
+          <h2 class="card-title">
+            <a href="/news/epsbench-benchmarking-llm-agents-for-earnings-forecasting.html">EPSBench: Benchmarking LLM Agents for Earnings Forecasting</a>
+          </h2>
+          <p class="card-desc">Quarterly earnings forecasting requires an agent to connect financial evidence to the income-statement line items that produce a company's reported earnings. We introduce EPSBench, a benchmark for studying this ability across 149 firm-quarters from 86 US companies. Agents read a fixed collection of filings, earnings-call transcripts, and news, then estimate company-specific income-statement driver</p>
+          <div class="card-footer">
+            <span class="source-tag">Source: Hugging Face Research</span>
+            <a href="/news/epsbench-benchmarking-llm-agents-for-earnings-forecasting.html" class="read-btn">READ INTEL ➔</a>
+          </div>
+        </div>
+        
+
+        <div class="news-card">
+          <div class="meta-row">
+            <span class="badge">RESEARCH SOTA</span>
+            <span class="cat-pill">Open-Source & Model Weights</span>
+            <span class="date">November 01, 2026 • 4 min read</span>
+          </div>
+          <h2 class="card-title">
+            <a href="/news/weaken-to-strengthen-weakening-induced-on-policy-self-distillation-for-larg.html">Weaken to Strengthen: Weakening-Induced On-Policy Self-Distillation for Large Reasoning Models</a>
+          </h2>
+          <p class="card-desc">Self-distillation offers a way to improve reasoning models when a suitable external teacher is unavailable. However, common approaches rely on privileged information to construct a stronger self-teacher, limiting their use when only unlabeled prompts are available. In this paper, we introduce Weakening-Induced On-Policy Self-Distillation (WISD), which instead constructs a weaker counterpart of the</p>
+          <div class="card-footer">
+            <span class="source-tag">Source: Hugging Face Research</span>
+            <a href="/news/weaken-to-strengthen-weakening-induced-on-policy-self-distillation-for-larg.html" class="read-btn">READ INTEL ➔</a>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+</body>
+</html>
