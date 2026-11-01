@@ -1,5 +1,29 @@
 [
   {
+    "title": "Unlocking Any-Order Generation in Pretrained Autoregressive Image Models",
+    "slug": "unlocking-any-order-generation-in-pretrained-autoregressive-image-models",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2610.39293",
+    "summary": "Autoregressive (AR) image generators are powerful in principle but inflexible in practice: training with a fixed raster-scan order hardcodes a single factorization of the image distribution into the model, leaving it unable to inpaint, outpaint, or edit at inference time. Existing solutions, including the modern discrete-diffusion family, train from scratch on a mixture of token orderings, paying ",
+    "date": "November 01, 2026",
+    "iso_date": "2026-11-01T15:00:06.617122+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Matched Capabilities, Different Behaviors: A Controlled Study of MCP and CLI Interfaces for Language Agents",
+    "slug": "matched-capabilities-different-behaviors-a-controlled-study-of-mcp-and-cli-",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2610.34298",
+    "summary": "Language agents increasingly act through external tools and interactive environments, making the interface between the model and its executable capabilities part of the decision process. Model Context Protocol (MCP) and command-line interfaces (CLI) can expose the same semantic operations through markedly different model-facing representations. We study whether these representational differences c",
+    "date": "November 01, 2026",
+    "iso_date": "2026-11-01T15:00:06.617122+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "EPSBench: Benchmarking LLM Agents for Earnings Forecasting",
     "slug": "epsbench-benchmarking-llm-agents-for-earnings-forecasting",
     "category": "Open-Source & Model Weights",
