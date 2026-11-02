@@ -1,5 +1,29 @@
 [
   {
+    "title": "OSWAM: An Effective World Action Model with One-Step Action Generation",
+    "slug": "oswam-an-effective-world-action-model-with-one-step-action-generation",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2610.35850",
+    "summary": "Direct-policy World Action Models (WAM) have demonstrated the benefits of decoupling action generation from explicit future visual prediction for efficient inference in autonomous driving and embodied control. However, they still require tens of denoising steps to achieve competitive action quality, incurring substantial latency and hindering real-time deployment. Simply reducing the number of den",
+    "date": "November 02, 2026",
+    "iso_date": "2026-11-02T15:00:09.747700+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Think Twice: The Metis-1.6 Technical Report",
+    "slug": "think-twice-the-metis-16-technical-report",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2610.37903",
+    "summary": "Metis is a bet that better data, better training methods and new architectures can buy what a bigger parameter count cannot, at a fraction of the cost. Metis-1.6 is its latest step: two language models built from scratch by a single researcher, Praxis (2.94B parameters, 0.46B active per pass) and Logos (10.23B parameters, 1.18B active per pass). Both run a hybrid Mamba-2 and attention mixture-of-e",
+    "date": "November 02, 2026",
+    "iso_date": "2026-11-02T15:00:09.747700+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Unlocking Any-Order Generation in Pretrained Autoregressive Image Models",
     "slug": "unlocking-any-order-generation-in-pretrained-autoregressive-image-models",
     "category": "Open-Source & Model Weights",
