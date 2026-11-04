@@ -1,5 +1,29 @@
 [
   {
+    "title": "Kierston & KierstonBench: Simulation of Allentown, PA and Evaluation of Language Models in Crime Investigation and Surveillance Tasks",
+    "slug": "kierston-kierstonbench-simulation-of-allentown-pa-and-evaluation-of-languag",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.04785",
+    "summary": "Large language models are candidates for collecting and analyzing records in criminal investigations and mass surveillance. Their capability and accuracy in this work cannot currently be measured. Real deployments lack the ground truth needed to score a model's conclusions, and no benchmark evaluates these capabilities in a simulated environment. We present Kierston, a city-scale simulation engine",
+    "date": "November 04, 2026",
+    "iso_date": "2026-11-04T12:07:57.927735+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Factorized MLLM Embeddings for Composed Image Retrieval",
+    "slug": "factorized-mllm-embeddings-for-composed-image-retrieval",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.05193",
+    "summary": "Composed Image Retrieval (CIR) aims to retrieve a target image given a reference image and a modification text. Although recent approaches leveraging Multimodal Large Language Models (MLLMs) have shown significant progress, we argue that the MLLM's compositional understanding remains underutilized. This stems from directly mapping composed queries into a retrieval embedding via contrastive supervi",
+    "date": "November 04, 2026",
+    "iso_date": "2026-11-04T12:07:57.927735+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "OSWAM: An Effective World Action Model with One-Step Action Generation",
     "slug": "oswam-an-effective-world-action-model-with-one-step-action-generation",
     "category": "Open-Source & Model Weights",
