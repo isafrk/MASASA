@@ -1,5 +1,29 @@
 [
   {
+    "title": "SynthFaces: Balanced Large Scale Human Dataset",
+    "slug": "synthfaces-balanced-large-scale-human-dataset",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2610.40119",
+    "summary": "The pursuit of fair and equitable AI in human-centric tasks is critically hindered by the inherent biases and privacy risks of real-world datasets, which offer imbalanced representations of identity and often contain sensitive personal information. Consequently, state-of-the-art generative models trained on this skewed data exhibit unfair performance, particularly in identity-preserving generation",
+    "date": "November 06, 2026",
+    "iso_date": "2026-11-06T09:58:20.307994+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Decoupled Predictive Decision Making: A Shared Conditional Predictor for Agents",
+    "slug": "decoupled-predictive-decision-making-a-shared-conditional-predictor-for-age",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.02075",
+    "summary": "Agent decisions depend on empirical relationships that deployment observations reveal and task descriptions alone may leave unresolved. We introduce Decoupled Predictive Decision Making (DPDM), an architecture that formulates heterogeneous agent decisions as conditional prediction with a shared pretrained learner. Language models provide semantic representations of current and historical records, ",
+    "date": "November 06, 2026",
+    "iso_date": "2026-11-06T09:58:20.307994+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Kierston & KierstonBench: Simulation of Allentown, PA and Evaluation of Language Models in Crime Investigation and Surveillance Tasks",
     "slug": "kierston-kierstonbench-simulation-of-allentown-pa-and-evaluation-of-languag",
     "category": "Open-Source & Model Weights",
