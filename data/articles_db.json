@@ -1,5 +1,29 @@
 [
   {
+    "title": "Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation",
+    "slug": "signed-but-steerable-measuring-and-closing-the-text-vector-integrity-gap-in",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.06498",
+    "summary": "Offline retrieval-augmented generation (RAG) on edge devices is updated through signed knowledge packs that carry text and precomputed embedding vectors. A signature proves who published a pack, not that its vectors encode its text. We study this text-vector integrity gap. A verifier that recomputes vectors and accepts them within a cosine tolerance concedes a predictable share of queries to an at",
+    "date": "November 06, 2026",
+    "iso_date": "2026-11-06T23:00:19.138995+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "StepX-OPD: Rethinking Multi-Teacher On-Policy Distillation in Diffusion Models",
+    "slug": "stepx-opd-rethinking-multi-teacher-on-policy-distillation-in-diffusion-mode",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.04386",
+    "summary": "A deployable text-to-image diffusion model must hold several capabilities at once, such as instruction following, text rendering and human preference, and must sample in a few steps. Capabilities and few-step sampling are built in separate stages: a full-step model first consolidates capabilities through multi-teacher on-policy distillation, then serves as a fixed teacher for step distillation. Ev",
+    "date": "November 06, 2026",
+    "iso_date": "2026-11-06T23:00:19.138995+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "SynthFaces: Balanced Large Scale Human Dataset",
     "slug": "synthfaces-balanced-large-scale-human-dataset",
     "category": "Open-Source & Model Weights",
