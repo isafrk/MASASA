@@ -1,5 +1,29 @@
 [
   {
+    "title": "Tools Need Not Speak in Text: Latent Context Compression for Agents",
+    "slug": "tools-need-not-speak-in-text-latent-context-compression-for-agents",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.06500",
+    "summary": "Large language model (LLM) agents typically append raw tool outputs to their context. Over multi-step interactions, long and noisy observations incur substantial context overhead and dilute the agent's attention to task-relevant information. Existing token pruning and summarization methods remain constrained by discrete text representations, limiting the achievable compression ratios.\n  In this wo",
+    "date": "November 07, 2026",
+    "iso_date": "2026-11-07T23:00:25.024258+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+    "slug": "swarmevolve-latent-agent-swarms-for-evolutionary-discovery-and-optimization",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.08483",
+    "summary": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a framework",
+    "date": "November 07, 2026",
+    "iso_date": "2026-11-07T23:00:25.024258+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation",
     "slug": "signed-but-steerable-measuring-and-closing-the-text-vector-integrity-gap-in",
     "category": "Open-Source & Model Weights",
