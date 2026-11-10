@@ -1,5 +1,29 @@
 [
   {
+    "title": "ODE Policy: Robot Learning via Action Dynamics, Not Actions",
+    "slug": "ode-policy-robot-learning-via-action-dynamics-not-actions",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.01729",
+    "summary": "Most robot policies, whether trained by imitation learning (IL) or reinforcement learning (RL), map observations to action values at discrete control steps and leave the continuity of physical motion to be learned implicitly. We propose ODE policy, which learns the dynamics of the action rather than the action itself. A neural ordinary differential equation (ODE) learns the vector field of the act",
+    "date": "November 10, 2026",
+    "iso_date": "2026-11-10T01:46:48.812988+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Toward the Era of Agentic Embodied Intelligence",
+    "slug": "toward-the-era-of-agentic-embodied-intelligence",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.09124",
+    "summary": "Foundation models increasingly guide robot actions, yet sustained autonomy requires efficient control and failure recovery. We introduce A2-MEAS, an embodied multi-agent framework built around code as a scaling interface. Learned correction codes combine corrective language, spatial evidence, execution history, and action proposals. MetaBrain provides training supervision and runtime guidance. A c",
+    "date": "November 10, 2026",
+    "iso_date": "2026-11-10T01:46:48.812988+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "OpenFrontiers: A Collection of Open Research Problems and a Benchmark for Scientific Rediscovery",
     "slug": "openfrontiers-a-collection-of-open-research-problems-and-a-benchmark-for-sc",
     "category": "Open-Source & Model Weights",
