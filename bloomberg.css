@@ -34,7 +34,7 @@
     --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
     --header-h: 54px;
-    --ticker-h: 28px;
+    --ticker-h: 46px;
     --footer-h: 28px;
 }
 
@@ -280,10 +280,16 @@ body {
     right: 0;
     z-index: 99;
     height: var(--ticker-h);
-    background: #080800;
+    background: #000000;
     border-bottom: 1px solid var(--border-amber);
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+
+.tradingview-widget-container {
+    width: 100%;
+    height: 46px;
     overflow: hidden;
 }
 

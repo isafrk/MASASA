@@ -69,12 +69,52 @@
         </div>
     </header>
 
-    <!-- ═══════════════════ NEWS TICKER ═══════════════════ -->
+    <!-- ═══════════════════ TRADINGVIEW OFFICIAL TICKER TAPE ═══════════════════ -->
     <div class="news-ticker-bar">
-        <span class="ticker-label">◉ LIVE</span>
-        <div class="ticker-track">
-            <div class="ticker-content" id="tickerContent"></div>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+            "symbols": [
+                { "description": "S&P 500", "proName": "FOREXCOM:SPXUSD" },
+                { "description": "NASDAQ 100", "proName": "FOREXCOM:NSXUSD" },
+                { "description": "DOW JONES", "proName": "FOREXCOM:DJI" },
+                { "description": "IHSG INDONESIA", "proName": "IDX:COMPOSITE" },
+                { "description": "BBCA", "proName": "IDX:BBCA" },
+                { "description": "BBRI", "proName": "IDX:BBRI" },
+                { "description": "TLKM", "proName": "IDX:TLKM" },
+                { "description": "BITCOIN", "proName": "BINANCE:BTCUSDT" },
+                { "description": "ETHEREUM", "proName": "BINANCE:ETHUSDT" },
+                { "description": "SOLANA", "proName": "BINANCE:SOLUSDT" },
+                { "description": "NVIDIA", "proName": "NASDAQ:NVDA" },
+                { "description": "APPLE", "proName": "NASDAQ:AAPL" },
+                { "description": "MICROSOFT", "proName": "NASDAQ:MSFT" },
+                { "description": "TESLA", "proName": "NASDAQ:TSLA" },
+                { "description": "ALPHABET", "proName": "NASDAQ:GOOGL" },
+                { "description": "AMAZON", "proName": "NASDAQ:AMZN" },
+                { "description": "META", "proName": "NASDAQ:META" },
+                { "description": "SUPER MICRO", "proName": "NASDAQ:SMCI" },
+                { "description": "MICROSTRATEGY", "proName": "NASDAQ:MSTR" },
+                { "description": "GOLD", "proName": "OANDA:XAUUSD" },
+                { "description": "SILVER", "proName": "OANDA:XAGUSD" },
+                { "description": "CRUDE OIL", "proName": "TVC:USOIL" },
+                { "description": "USD/IDR", "proName": "FX_IDC:USDIDR" },
+                { "description": "EUR/USD", "proName": "FX:EURUSD" },
+                { "description": "GBP/USD", "proName": "FX:GBPUSD" },
+                { "description": "USD/JPY", "proName": "FX:USDJPY" },
+                { "description": "VOLATILITY VIX", "proName": "CAPITALCOM:VIX" },
+                { "description": "US 10Y YIELD", "proName": "TVC:US10Y" }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "colorTheme": "dark",
+            "locale": "en"
+            }
+            </script>
         </div>
+        <!-- TradingView Widget END -->
     </div>
 
     <!-- ═══════════════════ MAIN DASHBOARD VIEW ═══════════════════ -->
