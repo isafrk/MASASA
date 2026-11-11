@@ -307,10 +307,14 @@ body {
 .ticker-content {
     white-space: nowrap;
     display: inline-block;
-    animation: tickerScroll 60s linear infinite;
+    animation: tickerScroll 120s linear infinite;
     color: var(--text-secondary);
     font-size: 11px;
     padding-left: 100%;
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
 }
 
 @keyframes tickerScroll {

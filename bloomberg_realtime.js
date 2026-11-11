@@ -351,31 +351,60 @@ async function refreshNews() {
 function updateLiveTicker() {
     if (typeof STOCKS === 'undefined') return;
     const parts = [];
-    const syms = ['AAPL', 'NVDA', 'MSFT', 'TSLA', 'GOOGL'];
-    syms.forEach(sym => {
-        const s = STOCKS[sym];
+
+    // Indices
+    const idxMap = [
+        { id: 'idx-spx', name: 'S&P 500' },
+        { id: 'idx-ndx', name: 'NASDAQ' },
+        { id: 'idx-dow', name: 'DOW JONES' },
+        { id: 'idx-vix', name: 'VIX' },
+        { id: 'idx-btc', name: 'BTC/USD' },
+        { id: 'idx-gold', name: 'GOLD' },
+        { id: 'idx-oil', name: 'CRUDE OIL' },
+        { id: 'idx-usdinr', name: 'USD/INR' }
+    ];
+    idxMap.forEach(item => {
+        const card = document.getElementById(item.id);
+        if (card) {
+            const p = card.querySelector('.idx-price')?.textContent || '';
+            const c = card.querySelector('.idx-change')?.textContent || '';
+            if (p) parts.push(`${item.name} ${p} ${c}  |  `);
+        }
+    });
+
+    // Tech & Mega-cap Stocks
+    Object.entries(STOCKS).forEach(([sym, s]) => {
         if (!s) return;
         const pct = ((s.price - s.prev) / s.prev * 100);
         const up = pct >= 0;
         parts.push(`${sym} $${fmtPrice(s.price)} ${up ? '▲' : '▼'} ${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%  |  `);
     });
 
-    // BTC from CRYPTOS
-    if (typeof CRYPTOS !== 'undefined' && CRYPTOS[0]) {
-        const btc = CRYPTOS[0];
-        const pct = btc.change || 0;
-        parts.push(`BTC/USD $${btc.price.toLocaleString('en-US', { maximumFractionDigits: 0 })} ${pct >= 0 ? '▲' : '▼'} ${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%  |  `);
+    // Cryptos
+    if (typeof CRYPTOS !== 'undefined' && Array.isArray(CRYPTOS)) {
+        CRYPTOS.forEach(c => {
+            const up = (c.change || 0) >= 0;
+            parts.push(`${c.sym}/USD $${fmtPrice(c.price)} ${up ? '▲' : '▼'} ${up ? '+' : ''}${(c.change || 0).toFixed(2)}%  |  `);
+        });
     }
 
-    // Gold
-    const goldCard = document.getElementById('idx-gold');
-    if (goldCard) {
-        const price = goldCard.querySelector('.idx-price')?.textContent;
-        if (price) parts.push(`GOLD $${price}/oz  |  `);
+    // Forex Pairs
+    if (typeof FX_PAIRS !== 'undefined' && Array.isArray(FX_PAIRS)) {
+        FX_PAIRS.forEach(fx => {
+            const diff = fx.rate - fx.base;
+            const up = diff >= 0;
+            parts.push(`${fx.pair} ${fx.rate.toFixed(4)} ${up ? '▲' : '▼'}  |  `);
+        });
     }
+
+    // Macro & Regional Telemetry
+    parts.push('USD/IDR Rp16,145 ▲  |  IHSG 7,285.40 ▲ +0.55%  |  US 10Y YIELD 4.312% ▲  |  FED HOLD 5.25-5.50%  |  ');
 
     const el = document.getElementById('tickerContent');
-    if (el && parts.length > 0) el.textContent = parts.join('  ');
+    if (el && parts.length > 0) {
+        // Repeat parts once to ensure seamless continuous scroll
+        el.textContent = parts.join('  ') + '  ' + parts.join('  ');
+    }
 }
 
 // ─────────────────────────────────────────────────────────────────
