@@ -187,6 +187,10 @@ def run_evergreen_cron():
     if any(a["slug"] == slug for a in articles):
         slug = f"{slug}-{now.strftime('%m%d')}"
         
+    from image_pool import get_unique_image
+    used_images = {a.get("image_url") for a in articles if a.get("image_url")}
+    assigned_image = get_unique_image(pillar["category"], used_images)
+
     article_dict = {
         "id": str(int(now.timestamp())),
         "slug": slug,
@@ -197,6 +201,7 @@ def run_evergreen_cron():
         "iso_date": iso_date,
         "reading_time": pillar["reading_time"],
         "summary": pillar["summary"],
+        "image_url": assigned_image,
         "source": "Mantra Labs Institutional Research",
         "source_url": f"https://mantralabs.web.id/articles/{slug}.html",
         "content_blocks": [

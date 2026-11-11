@@ -168,6 +168,12 @@ def rewrite_into_mantra_article(raw_item: dict, niche_name: str, source_name: st
 
     summary = f"Analisis mendalam Mantra Labs atas kabar {source_name} mengenai {title_raw}. Mengurai dampak transmisi pasar finansial, likuiditas makro, serta proyeksi strategis ke depan."
     
+    from image_pool import get_unique_image
+    with open(DB_FILE, "r", encoding="utf-8") as f_db:
+        curr_arts = json.load(f_db)
+    used_images = {a.get("image_url") for a in curr_arts if a.get("image_url")}
+    assigned_image = get_unique_image(category, used_images)
+
     article_dict = {
         "id": str(int(now.timestamp())),
         "slug": slug,
@@ -178,6 +184,7 @@ def rewrite_into_mantra_article(raw_item: dict, niche_name: str, source_name: st
         "iso_date": iso_date,
         "reading_time": "6 menit baca",
         "summary": summary,
+        "image_url": assigned_image,
         "source": source_name,
         "source_url": raw_item["link"],
         "content_blocks": [
