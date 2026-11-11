@@ -75,6 +75,20 @@ async function refreshUSStocks() {
                 }
                 if (row) flashRow(row, up);
                 drawSpark(`spark-${sym}`, generateSparkData(STOCKS[sym]));
+
+                // If currently viewed in main chart, update live candle
+                if (typeof currentSymbol !== 'undefined' && currentSymbol === sym && typeof mainChart !== 'undefined' && mainChart) {
+                    const ds = mainChart.data.datasets[0];
+                    if (ds && ds.data && ds.data.length > 0) {
+                        const lastCandle = ds.data[ds.data.length - 1];
+                        if (typeof lastCandle === 'object' && 'c' in lastCandle) {
+                            lastCandle.c = q.c;
+                            if (q.c > lastCandle.h) lastCandle.h = q.c;
+                            if (q.c < lastCandle.l) lastCandle.l = q.c;
+                            mainChart.update('none');
+                        }
+                    }
+                }
             }
         }
         await sleep(120); // gentle spacing to avoid rate limit

@@ -268,7 +268,7 @@ const TICKER_ITEMS = [
 // ─────────────────────────────────────────────────────────────────
 let currentSymbol = 'AAPL';
 let currentTimeframe = '1D';
-let currentChartType = 'line';
+let currentChartType = 'candle';
 let currentView = 'dashboard';
 let mainChart = null;
 let fullChart_ = null;
@@ -390,7 +390,7 @@ function generateSparkData(stock) {
 // ─────────────────────────────────────────────────────────────────
 // INIT CHART
 // ─────────────────────────────────────────────────────────────────
-function buildChart(canvasId, symbol, timeframe, type = 'line') {
+function buildChart(canvasId, symbol, timeframe, type = 'candle') {
     const ctx = document.getElementById(canvasId);
     if (!ctx) return null;
     const data = generatePriceData(symbol, timeframe);
@@ -398,54 +398,109 @@ function buildChart(canvasId, symbol, timeframe, type = 'line') {
     const isUp = data.closes[data.closes.length - 1] >= data.closes[0];
     const lineColor = isUp ? '#00e676' : '#ff3d3d';
     const fillColor = isUp ? 'rgba(0,230,118,0.07)' : 'rgba(255,61,61,0.07)';
-    const borderColor = isUp ? 'rgba(0,230,118,0.4)' : 'rgba(255,61,61,0.4)';
 
-    const chartData = {
-        labels: data.labels,
-        datasets: [{
+    let chartType = 'line';
+    let chartDatasets = [];
+
+    if (type === 'candle' && typeof Chart.registry.getController('candlestick') !== 'undefined') {
+        chartType = 'candlestick';
+        const now = Date.now();
+        const step = timeframe === '1D' ? 5 * 60 * 1000 : 24 * 60 * 60 * 1000;
+        const candleData = data.closes.map((c, i) => ({
+            x: now - (data.closes.length - 1 - i) * step,
+            o: data.opens[i],
+            h: data.highs[i],
+            l: data.lows[i],
+            c: c
+        }));
+        chartDatasets = [{
             label: symbol,
-            data: type === 'bar'
-                ? data.closes.map((c, i) => ({ x: data.labels[i], o: data.opens[i], h: data.highs[i], l: data.lows[i], c }))
-                : data.closes,
+            data: candleData,
+            color: {
+                up: '#00e676',
+                down: '#ff3d3d',
+                unchanged: '#f5a623'
+            },
+            borderColor: {
+                up: '#00e676',
+                down: '#ff3d3d',
+                unchanged: '#f5a623'
+            }
+        }];
+    } else if (type === 'bar') {
+        chartType = 'bar';
+        chartDatasets = [{
+            label: symbol,
+            data: data.closes.map((c, i) => ({ x: data.labels[i], o: data.opens[i], h: data.highs[i], l: data.lows[i], c })),
+            backgroundColor: function (cctx) { const v = cctx.raw; return v && v.o > v.c ? 'rgba(255,61,61,0.85)' : 'rgba(0,230,118,0.85)'; },
             borderColor: lineColor,
-            backgroundColor: type === 'bar'
-                ? function (ctx) { const v = ctx.raw; return v && v.o > v.c ? 'rgba(255,61,61,0.8)' : 'rgba(0,230,118,0.8)'; }
-                : fillColor,
+            borderWidth: 1
+        }];
+    } else {
+        chartType = 'line';
+        chartDatasets = [{
+            label: symbol,
+            data: data.closes,
+            borderColor: lineColor,
+            backgroundColor: fillColor,
             borderWidth: 1.5,
-            fill: type === 'line',
-            tension: 0.3,
+            fill: true,
+            tension: 0.25,
             pointRadius: 0,
             pointHoverRadius: 4,
-            pointHoverBackgroundColor: lineColor,
-        }],
-    };
+            pointHoverBackgroundColor: lineColor
+        }];
+    }
 
-    const chartType = type === 'bar' ? 'bar' : 'line';
+    const scalesConfig = chartType === 'candlestick' ? {
+        x: {
+            type: 'time',
+            time: {
+                unit: timeframe === '1D' ? 'hour' : 'day',
+                displayFormats: { hour: 'HH:mm', day: 'MMM d' }
+            },
+            ticks: { color: '#555', font: { family: 'JetBrains Mono', size: 9 }, maxTicksLimit: 8 },
+            grid: { color: '#111', drawTicks: false },
+            border: { color: '#222' }
+        },
+        y: {
+            position: 'right',
+            ticks: {
+                color: '#888', font: { family: 'JetBrains Mono', size: 9 },
+                callback: v => '$' + fmtPrice(v)
+            },
+            grid: { color: '#111' },
+            border: { color: '#222' }
+        }
+    } : {
+        x: {
+            ticks: { color: '#555', font: { family: 'JetBrains Mono', size: 9 }, maxTicksLimit: 8, maxRotation: 0 },
+            grid: { color: '#111', drawTicks: false },
+            border: { color: '#222' }
+        },
+        y: {
+            position: 'right',
+            ticks: {
+                color: '#888', font: { family: 'JetBrains Mono', size: 9 },
+                callback: v => '$' + fmtPrice(v)
+            },
+            grid: { color: '#111' },
+            border: { color: '#222' }
+        }
+    };
 
     const chart = new Chart(ctx, {
         type: chartType,
-        data: chartData,
+        data: {
+            labels: chartType === 'candlestick' ? undefined : data.labels,
+            datasets: chartDatasets
+        },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
-            animation: { duration: 400, easing: 'easeInOutQuart' },
-            scales: {
-                x: {
-                    ticks: { color: '#555', font: { family: 'JetBrains Mono', size: 9 }, maxTicksLimit: 8, maxRotation: 0 },
-                    grid: { color: '#111', drawTicks: false },
-                    border: { color: '#222' },
-                },
-                y: {
-                    position: 'right',
-                    ticks: {
-                        color: '#888', font: { family: 'JetBrains Mono', size: 9 },
-                        callback: v => '$' + fmtPrice(v),
-                    },
-                    grid: { color: '#111' },
-                    border: { color: '#222' },
-                },
-            },
+            animation: { duration: 300, easing: 'easeInOutQuart' },
+            scales: scalesConfig,
             plugins: {
                 legend: { display: false },
                 tooltip: {
@@ -457,11 +512,17 @@ function buildChart(canvasId, symbol, timeframe, type = 'line') {
                     titleFont: { family: 'JetBrains Mono', size: 10 },
                     bodyFont: { family: 'JetBrains Mono', size: 10 },
                     callbacks: {
-                        label: ctx => ` $${fmtPrice(typeof ctx.raw === 'object' ? ctx.raw.c : ctx.raw)}`
-                    },
-                },
-            },
-        },
+                        label: function(tooltipItem) {
+                            const raw = tooltipItem.raw;
+                            if (raw && typeof raw === 'object' && 'o' in raw) {
+                                return ` O: $${fmtPrice(raw.o)}  H: $${fmtPrice(raw.h)}  L: $${fmtPrice(raw.l)}  C: $${fmtPrice(raw.c)}`;
+                            }
+                            return ` $${fmtPrice(raw)}`;
+                        }
+                    }
+                }
+            }
+        }
     });
 
     // Update stats bar
@@ -487,15 +548,26 @@ function buildChart(canvasId, symbol, timeframe, type = 'line') {
 function liveUpdateChart() {
     if (!mainChart || currentTimeframe !== '1D') return;
     const ds = mainChart.data.datasets[0];
-    const labels = mainChart.data.labels;
+    if (!ds || !ds.data || ds.data.length === 0) return;
+
     const last = ds.data[ds.data.length - 1];
-    const lastVal = typeof last === 'object' ? last.c : last;
-    const newPrice = lastVal * (1 + rand(-0.001, 0.001));
-    const now = new Date();
-    const label = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-    labels.push(label);
-    ds.data.push(newPrice);
-    if (labels.length > 100) { labels.shift(); ds.data.shift(); }
+    if (typeof last === 'object' && 'c' in last) {
+        // Candlestick update: fluctuate current candle close, update high/low
+        const newClose = last.c * (1 + rand(-0.0008, 0.0008));
+        last.c = newClose;
+        if (newClose > last.h) last.h = newClose;
+        if (newClose < last.l) last.l = newClose;
+    } else {
+        const lastVal = typeof last === 'object' ? last.c : last;
+        const newPrice = lastVal * (1 + rand(-0.001, 0.001));
+        const now = new Date();
+        const label = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+        if (mainChart.data.labels) {
+            mainChart.data.labels.push(label);
+            ds.data.push(newPrice);
+            if (mainChart.data.labels.length > 100) { mainChart.data.labels.shift(); ds.data.shift(); }
+        }
+    }
     mainChart.update('none');
 }
 
@@ -954,6 +1026,10 @@ function setTimeframe(tf) {
 
 function setChartType(type) {
     currentChartType = type;
+    ['candle', 'line', 'bar'].forEach(t => {
+        const btn = document.getElementById(`btn-${t}`);
+        if (btn) btn.classList.toggle('active', t === type);
+    });
     if (mainChart) { mainChart.destroy(); }
     mainChart = buildChart('mainChart', currentSymbol, currentTimeframe, currentChartType);
 }
@@ -1270,7 +1346,7 @@ function init() {
     initTicker();
     initIndices();
     initWatchlist();
-    mainChart = buildChart('mainChart', 'AAPL', '1D', 'line');
+    mainChart = buildChart('mainChart', 'AAPL', '1D', 'candle');
     initMovers();
     initOptions();
     initCalendar();

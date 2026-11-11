@@ -13,6 +13,8 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="bloomberg.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="chartjs-chart-financial.min.js"></script>
 </head>
 
 <body>
@@ -207,8 +209,9 @@
                         <button class="tframe" onclick="setTimeframe('1W')">1W</button>
                         <button class="tframe" onclick="setTimeframe('1M')">1M</button>
                         <button class="tframe" onclick="setTimeframe('3M')">3M</button>
-                        <button class="tframe" onclick="setChartType('line')">LINE</button>
-                        <button class="tframe" onclick="setChartType('bar')">BAR</button>
+                        <button class="tframe active" id="btn-candle" onclick="setChartType('candle')">CANDLE</button>
+                        <button class="tframe" id="btn-line" onclick="setChartType('line')">LINE</button>
+                        <button class="tframe" id="btn-bar" onclick="setChartType('bar')">BAR</button>
                     </div>
                 </div>
                 <div class="chart-stats-bar">
