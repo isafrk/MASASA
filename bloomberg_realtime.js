@@ -413,6 +413,46 @@ function updateLiveTicker() {
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 // ─────────────────────────────────────────────────────────────────
+// PUBLIC-APIS INTEGRATION: FEAR & GREED INDEX (Alternative.me)
+// ─────────────────────────────────────────────────────────────────
+async function refreshFearGreed() {
+    const url = 'https://api.alternative.me/fng/?limit=1';
+    const data = await cachedFetch(url, 300000); // 5 min cache
+    if (!data || !data.data || !data.data[0]) return;
+    
+    const val = parseInt(data.data[0].value, 10);
+    const classification = (data.data[0].value_classification || 'NEUTRAL').toUpperCase();
+    
+    const valEl = document.getElementById('fgValue');
+    const lblEl = document.getElementById('fgLabel');
+    if (valEl) valEl.textContent = val;
+    if (lblEl) lblEl.textContent = classification;
+    
+    if (typeof fearGreedChart_ !== 'undefined' && fearGreedChart_) {
+        const color = val >= 75 ? '#00e676' : val >= 55 ? '#aeea00' : val >= 45 ? '#f5a623' : val >= 25 ? '#ff9100' : '#ff3d3d';
+        fearGreedChart_.data.datasets[0].data = [val, 100 - val];
+        fearGreedChart_.data.datasets[0].backgroundColor = [color, '#1a1a1a'];
+        fearGreedChart_.update();
+    }
+    console.info('[RT] Public-APIs: Fear & Greed refreshed ->', val, classification);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// PUBLIC-APIS INTEGRATION: US TREASURY MACRO INTEREST RATES (Fiscal Data)
+// ─────────────────────────────────────────────────────────────────
+async function refreshTreasuryRates() {
+    const url = 'https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/avg_interest_rates?sort=-record_date&page[size]=5';
+    const data = await cachedFetch(url, 600000); // 10 min cache
+    if (!data || !data.data || !Array.isArray(data.data)) return;
+    
+    // Find Treasury Bill or Bond rate
+    const bill = data.data.find(d => d.security_desc && d.security_desc.includes('Treasury Bills'));
+    if (bill && bill.avg_interest_rate_amt) {
+        console.info('[RT] Public-APIs: US Treasury Avg Rate ->', bill.avg_interest_rate_amt + '%');
+    }
+}
+
+// ─────────────────────────────────────────────────────────────────
 // MASTER REFRESH SCHEDULER
 // ─────────────────────────────────────────────────────────────────
 async function rtRefreshAll() {
@@ -426,6 +466,10 @@ async function rtRefreshAll() {
     await refreshFX();
     await sleep(300);
     await refreshCommodities();
+    await sleep(300);
+    await refreshFearGreed();
+    await sleep(200);
+    await refreshTreasuryRates();
     updateLiveTicker();
 
     // Override crypto renderer with real version
