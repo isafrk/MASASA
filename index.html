@@ -13,6 +13,7 @@
   <meta property="og:url" content="https://mantralabs.web.id/">
   <meta property="og:title" content="MANTRA LABS // Financial News & Global Macro Intelligence">
   <meta property="og:description" content="Deep-dive institutional analysis on capital markets, commodities, crypto, bilateral trade policies, and AI infrastructure.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -204,6 +205,20 @@
       font-weight: 600;
     }
 
+    .featured-hero-img {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      max-height: 380px;
+      margin: 4px 0 8px;
+    }
+
+    .featured-hero-img img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
     .featured-title {
       font-family: var(--font-head);
       font-size: 28px;
@@ -298,6 +313,26 @@
       border-color: var(--amber);
     }
 
+    .card-thumb {
+      margin: -24px -24px 16px -24px;
+      overflow: hidden;
+      height: 175px;
+      border-bottom: 1px solid var(--border);
+      background: #050505;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .news-card:hover .card-thumb img {
+      transform: scale(1.03);
+    }
+
     .card-meta {
       display: flex;
       justify-content: space-between;
@@ -305,6 +340,8 @@
       font-size: 11px;
       color: var(--text-muted);
       margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
     .card-cat {
@@ -369,6 +406,7 @@
       nav.main-nav { display: none; }
       .featured-title { font-size: 22px; }
       .featured-card { padding: 20px; }
+      .featured-hero-img img { height: 220px; }
     }
   </style>
 </head>
@@ -408,10 +446,12 @@
           <span class="badge-label">LEAD ANALYSIS</span>
           <span class="badge-cat">COMMODITIES & GEOPOLITICS</span>
         </div>
+        <div class="featured-hero-img">
+          <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80" alt="Middle East War Escalation, Crude Oil Spikes, and Gold: The Macro Transmission Channels to Global Risk Assets" loading="lazy">
+        </div>
         <h2 class="featured-title">
           <a href="/articles/gold-oil-middle-east-war-risk-transmission-macro-assets.html">Middle East War Escalation, Crude Oil Spikes, and Gold: The Macro Transmission Channels to Global Risk Assets</a>
         </h2>
-        <div style="margin:12px 0;border:1px solid var(--border);overflow:hidden;max-height:340px;"><img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80" alt="Middle East War Escalation, Crude Oil Spikes, and Gold: The Macro Transmission Channels to Global Risk Assets" style="width:100%;height:340px;object-fit:cover;display:block;" loading="lazy"></div>
         <p class="featured-summary">As military tensions flare along critical maritime corridors, crude oil and physical gold react through two distinct economic conduits: physical supply disruption and sovereign risk hedging.</p>
         <div class="featured-footer">
           <span>Published: November 11, 2026 &bull; 7 min read</span>
@@ -429,7 +469,9 @@
       <div class="articles-grid">
         
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="US-China Bilateral Strains and the Structural Erosion of Petrodollar Hegemony" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80" alt="US-China Bilateral Strains and the Structural Erosion of Petrodollar Hegemony" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">ECONOMIC POLICY & DIPLOMACY</span>
         <span class="card-date">November 11, 2026 &bull; 8 min read</span>
@@ -442,10 +484,12 @@
         <a href="/articles/us-china-bilateral-dynamics-petrodollar-erosion-trade.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="The AI Hyperscaler CapEx Supercycle: Semiconductor Foundry Constraints and Data Center Power Limits" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80" alt="The AI Hyperscaler CapEx Supercycle: Semiconductor Foundry Constraints and Data Center Power Limits" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">ARTIFICIAL INTELLIGENCE & TECH</span>
         <span class="card-date">November 11, 2026 &bull; 8 min read</span>
@@ -458,10 +502,12 @@
         <a href="/articles/ai-hyperscaler-capex-supercycle-semiconductors-energy-limits.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Federal Reserve Rate Trajectory and the Repricing of Emerging Market Equity Valuations" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Federal Reserve Rate Trajectory and the Repricing of Emerging Market Equity Valuations" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">EQUITIES & CAPITAL MARKETS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -474,10 +520,12 @@
         <a href="/articles/federal-reserve-interest-rates-emerging-market-equity-valuations.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Institutional ETF Spot Inflows and Post-Halving Structural Supply Squeezes in Digital Assets" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1516245834210-c4c142787335?auto=format&fit=crop&w=1200&q=80" alt="Institutional ETF Spot Inflows and Post-Halving Structural Supply Squeezes in Digital Assets" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">CRYPTO & DIGITAL ASSETS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -490,10 +538,12 @@
         <a href="/articles/bitcoin-etf-institutional-liquidity-supply-halving-dynamics.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Middle East Oil Flows Far from Normal Despite Signs of Oversupply" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80" alt="Middle East Oil Flows Far from Normal Despite Signs of Oversupply" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">COMMODITIES & GEOPOLITICS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -506,10 +556,12 @@
         <a href="/articles/middle-east-oil-flows-far-from-normal-despite-signs-of-oversupply.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Platinum and Copper Reversals Raise Doubts About the Strength of Recent Rallies" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80" alt="Platinum and Copper Reversals Raise Doubts About the Strength of Recent Rallies" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">COMMODITIES & GEOPOLITICS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -522,10 +574,12 @@
         <a href="/articles/platinum-and-copper-reversals-raise-doubts-about-the-strength-of-recen.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Former Iraqi awmaker Ahmed al-Alwani found dead in Beirut" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1200&q=80" alt="Former Iraqi awmaker Ahmed al-Alwani found dead in Beirut" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">COMMODITIES & GEOPOLITICS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -538,10 +592,12 @@
         <a href="/articles/former-iraqi-awmaker-ahmed-al-alwani-found-dead-in-beirut.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="China Wants India’s Market. Does It Want India’s Industrial Rise?" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1578575317765-bc5cb6a92ec2?auto=format&fit=crop&w=1200&q=80" alt="China Wants India’s Market. Does It Want India’s Industrial Rise?" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">ECONOMIC POLICY & DIPLOMACY</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -554,10 +610,12 @@
         <a href="/articles/china-wants-indias-market-does-it-want-indias-industrial-rise.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">EQUITIES & CAPITAL MARKETS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -570,10 +628,12 @@
         <a href="/articles/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-p.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Warren: What is White House doing to prevent a repeat of teleprompter's Trump bets?" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80" alt="Warren: What is White House doing to prevent a repeat of teleprompter's Trump bets?" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">CRYPTO & DIGITAL ASSETS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -586,10 +646,12 @@
         <a href="/articles/warren-what-is-white-house-doing-to-prevent-a-repeat-of-teleprompters-.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="LNbits rushes emergency patch after reported Bitcoin wallet thefts" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=80" alt="LNbits rushes emergency patch after reported Bitcoin wallet thefts" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">CRYPTO & DIGITAL ASSETS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -602,10 +664,12 @@
         <a href="/articles/lnbits-rushes-emergency-patch-after-reported-bitcoin-wallet-thefts.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Bitcoin Miner HIVE Eyes $45 Million in Annual Revenue From AI Deal" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Bitcoin Miner HIVE Eyes $45 Million in Annual Revenue From AI Deal" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">CRYPTO & DIGITAL ASSETS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -618,10 +682,12 @@
         <a href="/articles/bitcoin-miner-hive-eyes-45-million-in-annual-revenue-from-ai-deal.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Forward Industries grows SOL treasury to 8.7 million as token hits nearly three-month low" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80" alt="Forward Industries grows SOL treasury to 8.7 million as token hits nearly three-month low" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">CRYPTO & DIGITAL ASSETS</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -634,10 +700,12 @@
         <a href="/articles/forward-industries-grows-sol-treasury-to-87-million-as-token-hits-near.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Grok Build coding agent leaks oodles of confidential info, some belonging to SpaceXSI" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Grok Build coding agent leaks oodles of confidential info, some belonging to SpaceXSI" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">ARTIFICIAL INTELLIGENCE & TECH</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -650,10 +718,12 @@
         <a href="/articles/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belongi.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="OpenAI acquires Odessia, travel startup created by Sonder founder" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="OpenAI acquires Odessia, travel startup created by Sonder founder" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">ARTIFICIAL INTELLIGENCE & TECH</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -666,10 +736,12 @@
         <a href="/articles/openai-acquires-odessia-travel-startup-created-by-sonder-founder.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Pay for Hugging Face Hub with your Google Cloud Account" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80" alt="Pay for Hugging Face Hub with your Google Cloud Account" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">ARTIFICIAL INTELLIGENCE & TECH</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -682,10 +754,12 @@
         <a href="/articles/pay-for-hugging-face-hub-with-your-google-cloud-account.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
 
     <article class="news-card">
-      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80" alt="Microsoft lobbies against potential ban on Chinese optical networking gear for AI data centers as FCC mulls restricting imports" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
+      <div class="card-thumb">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Microsoft lobbies against potential ban on Chinese optical networking gear for AI data centers as FCC mulls restricting imports" loading="lazy">
+      </div>
       <div class="card-meta">
         <span class="card-cat">ARTIFICIAL INTELLIGENCE & TECH</span>
         <span class="card-date">November 11, 2026 &bull; 6 min read</span>
@@ -698,7 +772,7 @@
         <a href="/articles/microsoft-lobbies-against-potential-ban-on-chinese-optical-networking-.html" class="read-link">READ FULL DISPATCH &rarr;</a>
       </div>
     </article>
-        
+    
       </div>
     </section>
 
