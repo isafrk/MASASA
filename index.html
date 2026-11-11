@@ -1,579 +1,509 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MANTRA LABS // PROFESSIONAL FINANCIAL TERMINAL - Global Market Intelligence</title>
-    <meta name="description"
-        content="A free Bloomberg-style financial terminal with live market data simulation, charts, news, and portfolio tracking." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="bloomberg.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script src="chartjs-adapter-date-fns.bundle.min.js"></script>
-    <script src="chartjs-chart-financial.min.js"></script>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANTRA LABS // Jurnal Finansial, Saham, Crypto, dan Makro Geopolitik Global</title>
+  <meta name="description" content="Portal berita dan riset mendalam seputar pasar saham, aset kripto, makroekonomi global, korelasi emas dan minyak perang, serta dinamika bilateral negara.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mantralabs.web.id/">
 
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mantra Labs Financial">
+  <meta property="og:url" content="https://mantralabs.web.id/">
+  <meta property="og:title" content="MANTRA LABS // Financial News & Macro Intelligence">
+  <meta property="og:description" content="Riset mendalam pasar modal, kripto, makroekonomi global, hubungan bilateral negara, dan korelasi komoditas perang.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #030303;
+      --bg-card: #080808;
+      --border: #1a1a1a;
+      --border-accent: #2e2410;
+      --amber: #f5a623;
+      --amber-soft: rgba(245, 166, 35, 0.08);
+      --text: #e6e6e6;
+      --text-muted: #888888;
+      --positive: #00e676;
+      --negative: #ff3d3d;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --font-head: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* HEADER */
+    header.site-header {
+      background: #000;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .brand-logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .brand-logo span {
+      color: var(--amber);
+    }
+
+    .brand-tag {
+      background: #111;
+      border: 1px solid var(--border-accent);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 2px 6px;
+      letter-spacing: 1px;
+    }
+
+    nav.main-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--amber);
+    }
+
+    /* LIVE TICKER STRIP */
+    .ticker-bar {
+      background: #060500;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      height: 32px;
+      align-items: center;
+    }
+
+    .ticker-title {
+      background: #0f0a00;
+      color: var(--amber);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 0 12px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid var(--border-accent);
+      flex-shrink: 0;
+      letter-spacing: 1px;
+    }
+
+    .ticker-track {
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .ticker-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: tickerRun 90s linear infinite;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #aaa;
+      padding-left: 100%;
+    }
+
+    .ticker-content:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes tickerRun {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+    }
+
+    /* HERO FEATURED ARTICLE */
+    .featured-section {
+      margin-bottom: 40px;
+    }
+
+    .featured-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .featured-card:hover {
+      border-color: var(--amber);
+    }
+
+    .featured-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge-label {
+      background: var(--amber);
+      color: #000;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      letter-spacing: 1px;
+    }
+
+    .badge-cat {
+      color: var(--amber);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .featured-title {
+      font-family: var(--font-head);
+      font-size: 28px;
+      line-height: 1.3;
+      color: #fff;
+    }
+
+    .featured-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .featured-title a:hover {
+      color: var(--amber);
+    }
+
+    .featured-summary {
+      font-size: 16px;
+      color: #bbb;
+      line-height: 1.7;
+      max-width: 900px;
+    }
+
+    .featured-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid #141414;
+      padding-top: 16px;
+      margin-top: 8px;
+    }
+
+    .read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .read-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* GRID ARTICLES */
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: 20px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--amber);
+      display: inline-block;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s;
+    }
+
+    .news-card:hover {
+      border-color: var(--amber);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .card-cat {
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-family: var(--font-head);
+      font-size: 19px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .card-title a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .card-title a:hover {
+      color: var(--amber);
+    }
+
+    .card-summary {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      border-top: 1px solid #141414;
+      padding-top: 14px;
+    }
+
+    .read-link {
+      color: var(--amber);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .read-link:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #000;
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav { display: none; }
+      .featured-title { font-size: 22px; }
+      .featured-card { padding: 20px; }
+    }
+  </style>
+</head>
 <body>
 
-    <!-- ═══════════════════ HEADER ═══════════════════ -->
-    <header class="terminal-header">
-        <div class="header-left">
-            <div class="logo">
-                <span class="logo-bloom">MANTRA</span><span class="logo-free">LABS</span>
-                <span class="logo-tag">TERMINAL // PRO</span>
-            </div>
-            <div class="function-keys">
-                <button class="fkey active" data-view="dashboard" onclick="switchView('dashboard')">F1 DASH</button>
-                <button class="fkey" data-view="charts" onclick="switchView('charts')">F2 CHART</button>
-                <button class="fkey" data-view="portfolio" onclick="switchView('portfolio')">F3 PORT</button>
-                <button class="fkey" data-view="crypto" onclick="switchView('crypto')">F4 CRYPTO</button>
-                <button class="fkey" data-view="fx" onclick="switchView('fx')">F5 FX</button>
-                <button class="fkey idx-key" data-view="india" onclick="switchView('india')">F6 🇮🇩 IDX / ASIA</button>
-            </div>
-        </div>
-        <div class="header-center">
-            <div class="search-wrap">
-                <span class="search-icon">⌕</span>
-                <input type="text" id="symbolSearch" placeholder="Search ticker... AAPL, TSLA, BTCUSD"
-                    autocomplete="off" />
-                <button id="searchBtn" onclick="searchSymbol()">GO</button>
-            </div>
-        </div>
-        <div class="header-right">
-            <div class="market-status">
-                <span class="status-dot" id="marketStatusDot"></span>
-                <span id="marketStatusText">MARKET OPEN</span>
-            </div>
-            <div class="clock-block">
-                <div class="clock-time" id="clockTime">--:--:--</div>
-                <div class="clock-date" id="clockDate">--- --, ----</div>
-            </div>
-            <div class="clock-block">
-                <div class="clock-label">IST</div>
-                <div class="clock-time" id="clockIST">--:--</div>
-            </div>
-            <div class="clock-block">
-                <div class="clock-label">NY</div>
-                <div class="clock-time" id="clockNY">--:--</div>
-            </div>
-            <div class="clock-block">
-                <div class="clock-label">LON</div>
-                <div class="clock-time" id="clockLON">--:--</div>
-            </div>
-            <div class="clock-block">
-                <div class="clock-label">TKY</div>
-                <div class="clock-time" id="clockTKY">--:--</div>
-            </div>
-        </div>
-    </header>
-
-    <!-- ═══════════════════ TRADINGVIEW OFFICIAL TICKER TAPE ═══════════════════ -->
-    <div class="news-ticker-bar">
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-            {
-            "symbols": [
-                { "description": "S&P 500", "proName": "FOREXCOM:SPXUSD" },
-                { "description": "NASDAQ 100", "proName": "FOREXCOM:NSXUSD" },
-                { "description": "DOW JONES", "proName": "FOREXCOM:DJI" },
-                { "description": "IHSG INDONESIA", "proName": "IDX:COMPOSITE" },
-                { "description": "BBCA", "proName": "IDX:BBCA" },
-                { "description": "BBRI", "proName": "IDX:BBRI" },
-                { "description": "TLKM", "proName": "IDX:TLKM" },
-                { "description": "BITCOIN", "proName": "BINANCE:BTCUSDT" },
-                { "description": "ETHEREUM", "proName": "BINANCE:ETHUSDT" },
-                { "description": "SOLANA", "proName": "BINANCE:SOLUSDT" },
-                { "description": "NVIDIA", "proName": "NASDAQ:NVDA" },
-                { "description": "APPLE", "proName": "NASDAQ:AAPL" },
-                { "description": "MICROSOFT", "proName": "NASDAQ:MSFT" },
-                { "description": "TESLA", "proName": "NASDAQ:TSLA" },
-                { "description": "ALPHABET", "proName": "NASDAQ:GOOGL" },
-                { "description": "AMAZON", "proName": "NASDAQ:AMZN" },
-                { "description": "META", "proName": "NASDAQ:META" },
-                { "description": "SUPER MICRO", "proName": "NASDAQ:SMCI" },
-                { "description": "MICROSTRATEGY", "proName": "NASDAQ:MSTR" },
-                { "description": "GOLD", "proName": "OANDA:XAUUSD" },
-                { "description": "SILVER", "proName": "OANDA:XAGUSD" },
-                { "description": "CRUDE OIL", "proName": "TVC:USOIL" },
-                { "description": "USD/IDR", "proName": "FX_IDC:USDIDR" },
-                { "description": "EUR/USD", "proName": "FX:EURUSD" },
-                { "description": "GBP/USD", "proName": "FX:GBPUSD" },
-                { "description": "USD/JPY", "proName": "FX:USDJPY" },
-                { "description": "VOLATILITY VIX", "proName": "CAPITALCOM:VIX" },
-                { "description": "US 10Y YIELD", "proName": "TVC:US10Y" }
-            ],
-            "showSymbolLogo": true,
-            "isTransparent": true,
-            "displayMode": "adaptive",
-            "colorTheme": "dark",
-            "locale": "en"
-            }
-            </script>
-        </div>
-        <!-- TradingView Widget END -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-brand">
+        <span class="brand-logo">MANTRA<span>LABS</span></span>
+        <span class="brand-tag">FINANCIAL DISPATCH</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link active">SEMUA TOPIK</a>
+        <a href="/articles/korelasi-emas-dan-minyak-saat-eskalasi-perang-timur-tengah.html" class="nav-link">KOMODITAS & PERANG</a>
+        <a href="/articles/dinamika-bilateral-as-china-dan-pergeseran-petrodollar.html" class="nav-link">BILATERAL NEGARA</a>
+        <a href="/articles/proyeksi-kebijakan-suku-bunga-the-fed-dan-dampaknya-ke-ihsg.html" class="nav-link">SAHAM & MAKRO</a>
+        <a href="/articles/likuiditas-kripto-etf-institusional-dan-siklus-halving-bitcoin.html" class="nav-link">KRIPTO</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- ═══════════════════ MAIN DASHBOARD VIEW ═══════════════════ -->
-    <main id="view-dashboard" class="view active">
+  <div class="ticker-bar">
+    <div class="ticker-title">LIVE TELEMETRY</div>
+    <div class="ticker-track">
+      <div class="ticker-content">
+        BRENT CRUDE $85.60/bbl ▲  &bull;  WTI CRUDE $81.42/bbl ▲  &bull;  GOLD SPOT $2,318.70/oz ▲  &bull;  SILVER $27.42/oz ▲  &bull;  USD/IDR Rp16,145 ▲  &bull;  IHSG 7,285.40 ▲ +0.55%  &bull;  S&P 500 5,248.49 ▲  &bull;  NASDAQ 18,386.22 ▲  &bull;  BTC/USD $67,840 ▲  &bull;  ETH/USD $3,542 ▲  &bull;  US 10Y YIELD 4.312% ▲  &bull;  FED FUNDS RATE: 5.25-5.50% HOLD  &bull;  RMB OIL SHARE: 41% IN MIDDLE EAST-CHINA TRADE &bull; 
+      </div>
+    </div>
+  </div>
 
-        <!-- ROW 1: Global Indices strip -->
-        <section class="indices-strip">
-            <div class="index-card" id="idx-spx">
-                <div class="idx-name">S&amp;P 500</div>
-                <div class="idx-price">5,248.49</div>
-                <div class="idx-change positive">▲ +0.00%</div>
-            </div>
-            <div class="index-card" id="idx-ndx">
-                <div class="idx-name">NASDAQ</div>
-                <div class="idx-price">18,386.22</div>
-                <div class="idx-change positive">▲ +0.00%</div>
-            </div>
-            <div class="index-card" id="idx-dow">
-                <div class="idx-name">DOW JONES</div>
-                <div class="idx-price">39,127.80</div>
-                <div class="idx-change positive">▲ +0.00%</div>
-            </div>
-            <div class="index-card india-idx" id="idx-nifty">
-                <div class="idx-name">NIFTY 50 🇮🇳</div>
-                <div class="idx-price">22,643.40</div>
-                <div class="idx-change positive">▲ +0.00%</div>
-            </div>
-            <div class="index-card india-idx" id="idx-sensex">
-                <div class="idx-name">SENSEX 🇮🇳</div>
-                <div class="idx-price">74,820.30</div>
-                <div class="idx-change positive">▲ +0.00%</div>
-            </div>
-            <div class="index-card" id="idx-vix">
-                <div class="idx-name">VIX</div>
-                <div class="idx-price">13.86</div>
-                <div class="idx-change negative">▼ -0.00%</div>
-            </div>
-            <div class="index-card" id="idx-btc">
-                <div class="idx-name">BTC/USD</div>
-                <div class="idx-price">67,840.50</div>
-                <div class="idx-change positive">▲ +0.00%</div>
-            </div>
-            <div class="index-card" id="idx-gold">
-                <div class="idx-name">GOLD (XAU)</div>
-                <div class="idx-price">2,318.70</div>
-                <div class="idx-change positive">▲ +0.00%</div>
-            </div>
-            <div class="index-card" id="idx-oil">
-                <div class="idx-name">CRUDE OIL</div>
-                <div class="idx-price">81.42</div>
-                <div class="idx-change negative">▼ -0.00%</div>
-            </div>
-            <div class="index-card" id="idx-usdinr">
-                <div class="idx-name">USD/INR</div>
-                <div class="idx-price">83.42</div>
-                <div class="idx-change negative">▼ -0.00%</div>
-            </div>
-        </section>
-
-        <!-- ROW 2: Main content grid -->
-        <div class="dashboard-grid">
-
-            <!-- PANEL: Watchlist -->
-            <section class="panel panel-watchlist">
-                <div class="panel-header">
-                    <span class="panel-title">◈ WATCHLIST</span>
-                    <span class="panel-hint positive">● LIVE DATA</span>
-                </div>
-                <table class="data-table" id="watchlistTable">
-                    <thead>
-                        <tr>
-                            <th>SYMBOL</th>
-                            <th>LAST</th>
-                            <th>CHG</th>
-                            <th>CHG%</th>
-                            <th>VOLUME</th>
-                            <th>CHART</th>
-                        </tr>
-                    </thead>
-                    <tbody id="watchlistBody"></tbody>
-                </table>
-            </section>
-
-            <!-- PANEL: Main Chart -->
-            <section class="panel panel-chart">
-                <div class="panel-header">
-                    <span class="panel-title" id="chartTitle">◈ AAPL - APPLE INC.</span>
-                    <div class="chart-controls">
-                        <button class="tframe active" onclick="setTimeframe('1D')">1D</button>
-                        <button class="tframe" onclick="setTimeframe('1W')">1W</button>
-                        <button class="tframe" onclick="setTimeframe('1M')">1M</button>
-                        <button class="tframe" onclick="setTimeframe('3M')">3M</button>
-                        <button class="tframe active" id="btn-candle" onclick="setChartType('candle')">CANDLE</button>
-                        <button class="tframe" id="btn-line" onclick="setChartType('line')">LINE</button>
-                        <button class="tframe" id="btn-bar" onclick="setChartType('bar')">BAR</button>
-                    </div>
-                </div>
-                <div class="chart-stats-bar">
-                    <span class="cstat">OPEN: <b id="cs-open">--</b></span>
-                    <span class="cstat">HIGH: <b id="cs-high" class="positive">--</b></span>
-                    <span class="cstat">LOW: <b id="cs-low" class="negative">--</b></span>
-                    <span class="cstat">PREV: <b id="cs-prev">--</b></span>
-                    <span class="cstat">MKT CAP: <b id="cs-mcap">--</b></span>
-                    <span class="cstat">P/E: <b id="cs-pe">--</b></span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="mainChart"></canvas>
-                </div>
-            </section>
-
-            <!-- PANEL: Top Movers -->
-            <section class="panel panel-movers">
-                <div class="panel-header">
-                    <span class="panel-title">◈ TOP MOVERS</span>
-                    <div class="mover-tabs">
-                        <button class="mtab active" onclick="switchMovers('gainers', this)">GAINERS</button>
-                        <button class="mtab" onclick="switchMovers('losers', this)">LOSERS</button>
-                    </div>
-                </div>
-                <div id="moversContainer" class="movers-list"></div>
-            </section>
-
-        </div><!-- /dashboard-grid -->
-
-        <!-- ROW 3: Bottom panels -->
-        <div class="bottom-grid">
-
-            <!-- PANEL: Options / Derivatives quick view -->
-            <section class="panel panel-options">
-                <div class="panel-header"><span class="panel-title">◈ OPTIONS CHAIN - AAPL</span></div>
-                <div class="options-grid">
-                    <div class="opt-side calls">
-                        <div class="opt-head">CALLS</div>
-                        <table class="data-table mini" id="callsTable">
-                            <thead>
-                                <tr>
-                                    <th>STRIKE</th>
-                                    <th>BID</th>
-                                    <th>ASK</th>
-                                    <th>IV</th>
-                                    <th>OI</th>
-                                </tr>
-                            </thead>
-                            <tbody id="callsBody"></tbody>
-                        </table>
-                    </div>
-                    <div class="opt-divider">
-                        <div class="opt-price" id="optCurrentPrice">$175.40</div>
-                        <div class="opt-label">UNDERLYING</div>
-                    </div>
-                    <div class="opt-side puts">
-                        <div class="opt-head">PUTS</div>
-                        <table class="data-table mini" id="putsTable">
-                            <thead>
-                                <tr>
-                                    <th>STRIKE</th>
-                                    <th>BID</th>
-                                    <th>ASK</th>
-                                    <th>IV</th>
-                                    <th>OI</th>
-                                </tr>
-                            </thead>
-                            <tbody id="putsBody"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PANEL: Economic Calendar -->
-            <section class="panel panel-calendar">
-                <div class="panel-header"><span class="panel-title">◈ ECONOMIC CALENDAR</span></div>
-                <div id="calendarList" class="calendar-list"></div>
-            </section>
-
-            <!-- PANEL: News Feed -->
-            <section class="panel panel-news">
-                <div class="panel-header"><span class="panel-title">◈ NEWS FEED</span><span class="panel-hint blink">●
-                        LIVE</span></div>
-                <div id="newsFeed" class="news-feed"></div>
-            </section>
-
-            <!-- PANEL: Sector Heatmap -->
-            <section class="panel panel-sectors">
-                <div class="panel-header">
-                    <span class="panel-title">◈ SECTOR PERFORMANCE</span>
-                    <div class="sector-tabs">
-                        <button class="stab active" onclick="switchSectorView('us',this)">US</button>
-                        <button class="stab" onclick="switchSectorView('india',this)">🇮🇳 INDIA</button>
-                    </div>
-                </div>
-                <div id="sectorHeatmap" class="sector-heatmap"></div>
-            </section>
-
-        </div><!-- /bottom-grid -->
-    </main>
-
-    <!-- ═══════════════════ CHARTS VIEW ═══════════════════ -->
-    <main id="view-charts" class="view">
-        <div class="full-chart-container">
-            <div class="panel" style="height:100%">
-                <div class="panel-header">
-                    <span class="panel-title" id="chartTitle2">◈ FULL CHART - AAPL</span>
-                    <div class="chart-controls">
-                        <button class="tframe active" onclick="setTimeframe('1D')">1D</button>
-                        <button class="tframe" onclick="setTimeframe('1W')">1W</button>
-                        <button class="tframe" onclick="setTimeframe('1M')">1M</button>
-                        <button class="tframe" onclick="setTimeframe('3M')">3M</button>
-                    </div>
-                </div>
-                <canvas id="fullChart" style="max-height:calc(100vh - 220px)"></canvas>
-            </div>
+  <main class="container">
+    
+    <!-- FEATURED ARTICLE -->
+    <section class="featured-section">
+      <div class="featured-card">
+        <div class="featured-badge-row">
+          <span class="badge-label">ANALISIS UTAMA</span>
+          <span class="badge-cat">KOMODITAS & GEOPOLITIK</span>
         </div>
-    </main>
-
-    <!-- ═══════════════════ PORTFOLIO VIEW ═══════════════════ -->
-    <main id="view-portfolio" class="view">
-        <div class="portfolio-container">
-            <section class="panel portfolio-summary">
-                <div class="panel-header"><span class="panel-title">◈ PORTFOLIO SUMMARY</span></div>
-                <div class="port-stats">
-                    <div class="port-stat">
-                        <div class="port-stat-label">TOTAL VALUE</div>
-                        <div class="port-stat-value" id="portTotal">$0.00</div>
-                    </div>
-                    <div class="port-stat">
-                        <div class="port-stat-label">DAY P&amp;L</div>
-                        <div class="port-stat-value positive" id="portDayPL">+$0.00</div>
-                    </div>
-                    <div class="port-stat">
-                        <div class="port-stat-label">TOTAL P&amp;L</div>
-                        <div class="port-stat-value positive" id="portTotalPL">+$0.00</div>
-                    </div>
-                    <div class="port-stat">
-                        <div class="port-stat-label">BETA</div>
-                        <div class="port-stat-value" id="portBeta">1.12</div>
-                    </div>
-                    <div class="port-stat">
-                        <div class="port-stat-label">SHARPE</div>
-                        <div class="port-stat-value positive" id="portSharpe">1.84</div>
-                    </div>
-                </div>
-            </section>
-            <div class="portfolio-body">
-                <section class="panel">
-                    <div class="panel-header"><span class="panel-title">◈ HOLDINGS</span></div>
-                    <table class="data-table" id="holdingsTable">
-                        <thead>
-                            <tr>
-                                <th>SYMBOL</th>
-                                <th>SHARES</th>
-                                <th>AVG COST</th>
-                                <th>CURRENT</th>
-                                <th>MKT VALUE</th>
-                                <th>P&amp;L</th>
-                                <th>P&amp;L %</th>
-                                <th>WEIGHT</th>
-                            </tr>
-                        </thead>
-                        <tbody id="holdingsBody"></tbody>
-                    </table>
-                </section>
-                <section class="panel">
-                    <div class="panel-header"><span class="panel-title">◈ ALLOCATION</span></div>
-                    <div class="allocation-chart-wrap">
-                        <canvas id="allocationChart"></canvas>
-                    </div>
-                </section>
-            </div>
+        <h2 class="featured-title">
+          <a href="/articles/korelasi-emas-dan-minyak-saat-eskalasi-perang-timur-tengah.html">Minyak, Emas, dan Eskalasi Perang Timur Tengah: Mekanisme Transmisi Risiko ke Pasar Global</a>
+        </h2>
+        <p class="featured-summary">Ketika ketegangan militer di Selat Hormuz meningkat, minyak mentah dan emas bereaksi melalui dua saluran transmisi yang berbeda: disrupsi pasokan fisik dan perlindungan nilai aset likuid.</p>
+        <div class="featured-footer">
+          <span>Diterbitkan: 11 November 2026 &bull; 7 menit baca</span>
+          <a href="/articles/korelasi-emas-dan-minyak-saat-eskalasi-perang-timur-tengah.html" class="read-btn">BACA ANALISIS LENGKAP &rarr;</a>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <!-- ═══════════════════ CRYPTO VIEW ═══════════════════ -->
-    <main id="view-crypto" class="view">
-        <div class="dashboard-grid" style="grid-template-columns: 1fr 1fr; grid-template-rows: auto;">
-            <section class="panel" style="grid-column:1/-1">
-                <div class="panel-header"><span class="panel-title">◈ CRYPTO MARKETS</span></div>
-                <table class="data-table" id="cryptoTable">
-                    <thead>
-                        <tr>
-                            <th>ASSET</th>
-                            <th>PRICE</th>
-                            <th>24H CHG</th>
-                            <th>24H VOL</th>
-                            <th>MKT CAP</th>
-                            <th>DOMINANCE</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cryptoBody"></tbody>
-                </table>
-            </section>
-            <section class="panel">
-                <div class="panel-header"><span class="panel-title">◈ FEAR &amp; GREED INDEX</span></div>
-                <div class="fear-greed-wrap">
-                    <canvas id="fearGreedChart"></canvas>
-                    <div class="fg-value" id="fgValue">72</div>
-                    <div class="fg-label" id="fgLabel">GREED</div>
-                </div>
-            </section>
-            <section class="panel">
-                <div class="panel-header"><span class="panel-title">◈ MARKET DOMINANCE</span></div>
-                <canvas id="dominanceChart"></canvas>
-            </section>
-        </div>
-    </main>
+    <!-- ARTICLES GRID -->
+    <section>
+      <div class="section-head">
+        <h3 class="section-title">LAPORAN TERBARU &bull; RISET MAKRO & KEBIJAKAN EKONOMI</h3>
+        <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);">5 ARTIKEL RISET TERSEDIA</span>
+      </div>
 
-    <!-- ═══════════════════ FX VIEW ═══════════════════ -->
-    <main id="view-fx" class="view">
-        <section class="panel" style="margin:12px">
-            <div class="panel-header"><span class="panel-title">◈ FOREX RATES - LIVE SIM</span></div>
-            <div class="fx-grid" id="fxGrid"></div>
-        </section>
-    </main>
+      <div class="articles-grid">
+        
+    <article class="news-card">
+      <div class="card-meta">
+        <span class="card-cat">KEBIJAKAN EKONOMI</span>
+        <span class="card-date">11 November 2026 &bull; 8 menit baca</span>
+      </div>
+      <h3 class="card-title">
+        <a href="/articles/dinamika-bilateral-as-china-dan-pergeseran-petrodollar.html">Dinamika Bilateral AS - China dan Erosi Dominasi Petrodollar di Jalur Perdagangan Energi</a>
+      </h3>
+      <p class="card-summary">Hubungan bilateral antara Amerika Serikat dan China kini memasuki babak baru di mana penyelesaian transaksi perdagangan minyak internasional mulai beralih menggunakan mata uang lokal.</p>
+      <div class="card-footer">
+        <a href="/articles/dinamika-bilateral-as-china-dan-pergeseran-petrodollar.html" class="read-link">BACA ANALISIS LENGKAP &rarr;</a>
+      </div>
+    </article>
+    
 
-    <!-- ═══════════════════ 🇮🇳 INDIA VIEW ═══════════════════ -->
-    <main id="view-india" class="view">
+    <article class="news-card">
+      <div class="card-meta">
+        <span class="card-cat">SAHAM & BURSA</span>
+        <span class="card-date">11 November 2026 &bull; 6 menit baca</span>
+      </div>
+      <h3 class="card-title">
+        <a href="/articles/proyeksi-kebijakan-suku-bunga-the-fed-dan-dampaknya-ke-ihsg.html">Arah Suku Bunga The Fed dan Dampak Arus Modal Asing Terhadap Valuasi Saham IHSG</a>
+      </h3>
+      <p class="card-summary">Ketidakpastian penurunan suku bunga Federal Reserve menahan laju ekspansi valuasi saham perbankan dan emiten berkapitalisasi besar di Bursa Efek Indonesia.</p>
+      <div class="card-footer">
+        <a href="/articles/proyeksi-kebijakan-suku-bunga-the-fed-dan-dampaknya-ke-ihsg.html" class="read-link">BACA ANALISIS LENGKAP &rarr;</a>
+      </div>
+    </article>
+    
 
-        <!-- India indices strip -->
-        <section class="india-indices-strip">
-            <div class="iidx-card" id="iidx-nifty50">
-                <div class="iidx-name">NIFTY 50</div>
-                <div class="iidx-price">22,643.40</div>
-                <div class="iidx-chg positive">▲ +0.00%</div>
-            </div>
-            <div class="iidx-card" id="iidx-sensex">
-                <div class="iidx-name">SENSEX</div>
-                <div class="iidx-price">74,820.30</div>
-                <div class="iidx-chg positive">▲ +0.00%</div>
-            </div>
-            <div class="iidx-card" id="iidx-banknifty">
-                <div class="iidx-name">NIFTY BANK</div>
-                <div class="iidx-price">47,840.20</div>
-                <div class="iidx-chg positive">▲ +0.00%</div>
-            </div>
-            <div class="iidx-card" id="iidx-niftyit">
-                <div class="iidx-name">NIFTY IT</div>
-                <div class="iidx-price">38,640.80</div>
-                <div class="iidx-chg negative">▼ -0.00%</div>
-            </div>
-            <div class="iidx-card" id="iidx-niftymid">
-                <div class="iidx-name">NIFTY MIDCAP</div>
-                <div class="iidx-price">50,210.60</div>
-                <div class="iidx-chg positive">▲ +0.00%</div>
-            </div>
-            <div class="iidx-card" id="iidx-niftyauto">
-                <div class="iidx-name">NIFTY AUTO</div>
-                <div class="iidx-price">22,180.40</div>
-                <div class="iidx-chg negative">▼ -0.00%</div>
-            </div>
-            <div class="iidx-card" id="iidx-niftypharma">
-                <div class="iidx-name">NIFTY PHARMA</div>
-                <div class="iidx-price">19,842.70</div>
-                <div class="iidx-chg positive">▲ +0.00%</div>
-            </div>
-            <div class="iidx-card" id="iidx-india-vix">
-                <div class="iidx-name">INDIA VIX</div>
-                <div class="iidx-price">14.28</div>
-                <div class="iidx-chg negative">▼ -0.00%</div>
-            </div>
-        </section>
+    <article class="news-card">
+      <div class="card-meta">
+        <span class="card-cat">CRYPTO & ASET DIGITAL</span>
+        <span class="card-date">11 November 2026 &bull; 6 menit baca</span>
+      </div>
+      <h3 class="card-title">
+        <a href="/articles/likuiditas-kripto-etf-institusional-dan-siklus-halving-bitcoin.html">Adopsi ETF Spot dan Dinamika Likuiditas Bitcoin Pasca-Halving di Tengah Sentimen Makro</a>
+      </h3>
+      <p class="card-summary">Perjalanan aset kripto kini terikat erat dengan siklus likuiditas global dan arus masuk modal institusional melalui instrumen ETF berizin resmi.</p>
+      <div class="card-footer">
+        <a href="/articles/likuiditas-kripto-etf-institusional-dan-siklus-halving-bitcoin.html" class="read-link">BACA ANALISIS LENGKAP &rarr;</a>
+      </div>
+    </article>
+    
 
-        <div class="india-grid">
+    <article class="news-card">
+      <div class="card-meta">
+        <span class="card-cat">MAKRO GLOBAL</span>
+        <span class="card-date">11 November 2026 &bull; 7 menit baca</span>
+      </div>
+      <h3 class="card-title">
+        <a href="/articles/fragmentasi-geopolitik-dan-kebijakan-proteksionisme-tarif-dagang.html">Proteksionisme Tarif Dagang dan Restrukturisasi Rantai Pasok Manufaktur Dunia</a>
+      </h3>
+      <p class="card-summary">Penerapan tarif dagang unilateral dan kebijakan pembatasan ekspor teknologi strategis mendorong relokasi rantai pasok ke kawasan Asia Tenggara.</p>
+      <div class="card-footer">
+        <a href="/articles/fragmentasi-geopolitik-dan-kebijakan-proteksionisme-tarif-dagang.html" class="read-link">BACA ANALISIS LENGKAP &rarr;</a>
+      </div>
+    </article>
+    
+      </div>
+    </section>
 
-            <!-- Indian Stock Watchlist -->
-            <section class="panel panel-india-wl">
-                <div class="panel-header">
-                    <span class="panel-title">◈ NSE/BSE STOCKS</span>
-                    <span class="panel-hint india-badge">🇮🇳 INDIA</span>
-                </div>
-                <table class="data-table" id="indiaWLTable">
-                    <thead>
-                        <tr>
-                            <th>SYMBOL</th>
-                            <th>LAST (₹)</th>
-                            <th>CHG</th>
-                            <th>CHG%</th>
-                            <th>VOL</th>
-                            <th>CHART</th>
-                        </tr>
-                    </thead>
-                    <tbody id="indiaWLBody"></tbody>
-                </table>
-            </section>
+  </main>
 
-            <!-- India chart panel -->
-            <section class="panel panel-india-chart">
-                <div class="panel-header">
-                    <span class="panel-title" id="indiaChartTitle">◈ RELIANCE - LIVE CHART</span>
-                    <div class="chart-controls">
-                        <button class="tframe active" onclick="setIndiaTimeframe('1D')">1D</button>
-                        <button class="tframe" onclick="setIndiaTimeframe('1W')">1W</button>
-                        <button class="tframe" onclick="setIndiaTimeframe('1M')">1M</button>
-                    </div>
-                </div>
-                <div class="chart-stats-bar">
-                    <span class="cstat">OPEN: <b id="ics-open">--</b></span>
-                    <span class="cstat">HIGH: <b id="ics-high" class="positive">--</b></span>
-                    <span class="cstat">LOW: <b id="ics-low" class="negative">--</b></span>
-                    <span class="cstat">52W H: <b id="ics-52h" class="positive">--</b></span>
-                    <span class="cstat">52W L: <b id="ics-52l" class="negative">--</b></span>
-                    <span class="cstat">MCap: <b id="ics-mcap">--</b></span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="indiaChart"></canvas>
-                </div>
-            </section>
+  <footer class="site-footer">
+    MANTRA LABS FINANCIAL INTELLIGENCE &bull; JURNAL RISET PASAR MODAL, KOMODITAS, KRIPTO, DAN MAKROEKONOMI GLOBAL &bull; 2026
+  </footer>
 
-            <!-- India Top Movers -->
-            <section class="panel panel-india-movers">
-                <div class="panel-header">
-                    <span class="panel-title">◈ NSE TOP MOVERS</span>
-                    <div class="mover-tabs">
-                        <button class="imtab active" onclick="switchIndiaMovers('gainers',this)">GAINERS</button>
-                        <button class="imtab" onclick="switchIndiaMovers('losers',this)">LOSERS</button>
-                    </div>
-                </div>
-                <div id="indiaMoversContainer" class="movers-list"></div>
-            </section>
-
-        </div><!-- /india-grid -->
-
-        <!-- India Bottom: Sector heatmap + News -->
-        <div class="india-bottom">
-            <section class="panel">
-                <div class="panel-header">
-                    <span class="panel-title">◈ INDIA SECTOR HEATMAP</span>
-                    <span class="panel-hint">NSE INDICES</span>
-                </div>
-                <div id="indiaSectorHeatmap" class="sector-heatmap"></div>
-            </section>
-            <section class="panel">
-                <div class="panel-header"><span class="panel-title">◈ INDIA MARKET NEWS</span><span
-                        class="panel-hint blink">● LIVE</span></div>
-                <div id="indiaNewsFeed" class="news-feed"></div>
-            </section>
-        </div>
-
-    </main>
-
-    <!-- ═══════════════════ FOOTER ═══════════════════ -->
-    <footer class="terminal-footer">
-        <div class="footer-left">
-            <span class="footer-item">⚡ MANTRA LABS TERMINAL v2.0</span>
-            <span class="footer-sep">|</span>
-            <span class="footer-item">DATA: <span class="positive">LIVE</span> - FINNHUB · COINGECKO ·
-                FRANKFURTER</span>
-            <span class="footer-sep">|</span>
-            <span class="footer-item" id="footerLatency">LATENCY: <span class="positive">12ms</span></span>
-        </div>
-        <div class="footer-right">
-            <span class="footer-item">UPDATES: <span class="positive" id="updateCount">0</span></span>
-            <span class="footer-sep">|</span>
-            <span class="footer-item">PRESS F1-F6 TO SWITCH VIEWS</span>
-        </div>
-    </footer>
-
-    <script src="bloomberg_app.js"></script>
-    <script src="bloomberg_realtime.js"></script>
 </body>
-
 </html>
