@@ -694,6 +694,7 @@ function initNewsFeed() {
         const div = document.createElement('div');
         div.className = 'news-item';
         const tagClass = n.tag === 'bullish' ? 'bullish' : n.tag === 'bearish' ? 'bearish' : '';
+        const readerUrl = `/news/reader.html?title=${encodeURIComponent(n.title)}&source=${encodeURIComponent(n.source)}&category=${encodeURIComponent(n.tag || 'MARKETS')}&time=${encodeURIComponent(n.time + ' UTC')}&summary=${encodeURIComponent(n.title)}&url=#`;
         div.innerHTML = `
       <div style="display:flex;justify-content:space-between">
         <span class="news-time">TODAY ${n.time}</span>
@@ -703,6 +704,8 @@ function initNewsFeed() {
       <span class="news-tag ${tagClass}">${(n.tag || 'neutral').toUpperCase()}</span>
       <span class="news-tag" style="margin-left:4px">${n.sym}</span>
     `;
+        div.style.cursor = 'pointer';
+        div.onclick = () => window.location.href = readerUrl;
         feed.appendChild(div);
     });
 }

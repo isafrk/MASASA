@@ -325,6 +325,10 @@ async function refreshNews() {
         const hm = `${String(ts.getHours()).padStart(2, '0')}:${String(ts.getMinutes()).padStart(2, '0')}`;
         const src = n.source || 'News';
         const headline = n.headline || n.summary || '';
+        const newsSummary = n.summary || n.headline || '';
+        const origUrl = n.url || '';
+        const readerUrl = `/news/reader.html?title=${encodeURIComponent(headline)}&source=${encodeURIComponent(src)}&category=${encodeURIComponent(n.category || 'MARKETS')}&time=${encodeURIComponent(hm + ' UTC')}&summary=${encodeURIComponent(newsSummary)}&url=${encodeURIComponent(origUrl)}`;
+
         div.innerHTML = `
       <div style="display:flex;justify-content:space-between">
         <span class="news-time">TODAY ${hm}</span>
@@ -333,7 +337,8 @@ async function refreshNews() {
       <div class="news-title">${headline.length > 120 ? headline.slice(0, 120) + '...' : headline}</div>
       <span class="news-tag">${(n.category || 'general').toUpperCase()}</span>
     `;
-        if (n.url) div.style.cursor = 'pointer', div.onclick = () => window.open(n.url, '_blank');
+        div.style.cursor = 'pointer';
+        div.onclick = () => window.location.href = readerUrl;
         feed.appendChild(div);
     });
 
