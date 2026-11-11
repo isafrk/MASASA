@@ -426,6 +426,7 @@ HOME_PAGE_HTML = f"""<!DOCTYPE html>
       <nav class="main-nav">
         <a href="/" class="nav-link active">SEMUA TOPIK</a>
         <a href="/articles/korelasi-emas-dan-minyak-saat-eskalasi-perang-timur-tengah.html" class="nav-link">KOMODITAS & PERANG</a>
+        <a href="/articles/ledakan-belanja-modal-capex-ai-dan-siklus-super-semikonduktor-global.html" class="nav-link">AI & TEKNOLOGI</a>
         <a href="/articles/dinamika-bilateral-as-china-dan-pergeseran-petrodollar.html" class="nav-link">BILATERAL NEGARA</a>
         <a href="/articles/proyeksi-kebijakan-suku-bunga-the-fed-dan-dampaknya-ke-ihsg.html" class="nav-link">SAHAM & MAKRO</a>
         <a href="/articles/likuiditas-kripto-etf-institusional-dan-siklus-halving-bitcoin.html" class="nav-link">KRIPTO</a>
@@ -437,7 +438,7 @@ HOME_PAGE_HTML = f"""<!DOCTYPE html>
     <div class="ticker-title">LIVE TELEMETRY</div>
     <div class="ticker-track">
       <div class="ticker-content">
-        BRENT CRUDE $85.60/bbl ▲  &bull;  WTI CRUDE $81.42/bbl ▲  &bull;  GOLD SPOT $2,318.70/oz ▲  &bull;  SILVER $27.42/oz ▲  &bull;  USD/IDR Rp16,145 ▲  &bull;  IHSG 7,285.40 ▲ +0.55%  &bull;  S&P 500 5,248.49 ▲  &bull;  NASDAQ 18,386.22 ▲  &bull;  BTC/USD $67,840 ▲  &bull;  ETH/USD $3,542 ▲  &bull;  US 10Y YIELD 4.312% ▲  &bull;  FED FUNDS RATE: 5.25-5.50% HOLD  &bull;  RMB OIL SHARE: 41% IN MIDDLE EAST-CHINA TRADE &bull; 
+        BRENT CRUDE $85.60/bbl ▲  &bull;  WTI CRUDE $81.42/bbl ▲  &bull;  GOLD SPOT $2,318.70/oz ▲  &bull;  NVDA $875.30 ▲  &bull;  AI CAPEX SPEND: $200B+ RUN-RATE ▲  &bull;  TSMC WAFER UTILIZATION: 98.4% ▲  &bull;  USD/IDR Rp16,145 ▲  &bull;  IHSG 7,285.40 ▲ +0.55%  &bull;  S&P 500 5,248.49 ▲  &bull;  NASDAQ 18,386.22 ▲  &bull;  BTC/USD $67,840 ▲  &bull;  ETH/USD $3,542 ▲  &bull;  US 10Y YIELD 4.312% ▲  &bull;  FED FUNDS RATE: 5.25-5.50% HOLD  &bull;  RMB OIL SHARE: 41% IN MIDDLE EAST-CHINA TRADE &bull; 
       </div>
     </div>
   </div>
