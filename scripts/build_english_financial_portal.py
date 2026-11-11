@@ -623,6 +623,7 @@ def build_all():
       </div>
       <h1>{title}</h1>
       <p class="lead-summary">{summary}</p>
+      <div style="margin-top:20px;border:1px solid var(--border);overflow:hidden;background:#050505;"><img src="{image_url}" alt="{title}" style="width:100%;height:380px;object-fit:cover;display:block;" loading="lazy"></div>
     </article>
 
     <div class="article-body">
@@ -658,6 +659,7 @@ def build_all():
             badge=art["badge"],
             date=art["date"],
             reading_time=art["reading_time"],
+            image_url=art.get("image_url", "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"),
             body_html=body_html
         )
         out_file = ARTICLES_DIR / f"{art['slug']}.html"
@@ -671,6 +673,7 @@ def build_all():
     for a in grid_arts:
         card = f"""
     <article class="news-card">
+      <div style="margin:-24px -24px 16px -24px;overflow:hidden;height:160px;border-bottom:1px solid var(--border);"><img src="{a.get('image_url', 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80')}" alt="{a['title']}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></div>
       <div class="card-meta">
         <span class="card-cat">{a['category']}</span>
         <span class="card-date">{a['date']} &bull; {a['reading_time']}</span>
@@ -1100,6 +1103,7 @@ def build_all():
         <h2 class="featured-title">
           <a href="/articles/{lead_art['slug']}.html">{lead_art['title']}</a>
         </h2>
+        <div style="margin:12px 0;border:1px solid var(--border);overflow:hidden;max-height:340px;"><img src="{lead_art.get('image_url', 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1200&q=80')}" alt="{lead_art['title']}" style="width:100%;height:340px;object-fit:cover;display:block;" loading="lazy"></div>
         <p class="featured-summary">{lead_art['summary']}</p>
         <div class="featured-footer">
           <span>Published: {lead_art['date']} &bull; {lead_art['reading_time']}</span>
