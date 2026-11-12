@@ -3,8 +3,31 @@
   <url>
     <loc>https://mantralabs.web.id/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/oil-rebounds-as-geopolitical-risks-linger.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/api-shows-sharp-build-in-us-crude-oil-distillate-inventories.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/middle-east-oil-flows-far-from-normal-despite-signs-of-oversupply.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/gold-and-silver-sharp-decline-after-us-inflation-data.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mantralabs.web.id/articles/gold-oil-middle-east-war-risk-transmission-macro-assets.html</loc>
