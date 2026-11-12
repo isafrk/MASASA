@@ -1,5 +1,29 @@
 [
   {
+    "title": "Probing Transformer Representations Layer by Layer, Module by Module",
+    "slug": "probing-transformer-representations-layer-by-layer-module-by-module",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.11531",
+    "summary": "Which representation should be probed in a transformer-based foundation model? Recent work shows that the standard practice of probing the final layer is often suboptimal, as intermediate layers can provide better features. Yet, representations are still largely studied along depth alone, treating each transformer block as an atomic unit. In this work, we analyze transformer representations layer ",
+    "date": "November 12, 2026",
+    "iso_date": "2026-11-12T23:00:22.509192+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "ScrapeBench: Evaluating Legal Compliance of AI Agents in Website Scraping",
+    "slug": "scrapebench-evaluating-legal-compliance-of-ai-agents-in-website-scraping",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.11306",
+    "summary": "AI agents deployed on the open web are becoming more capable of performing actions that may breach contractual provisions and violate computer security laws. In this paper, we introduce ScrapeBench, the first agentic benchmark for empirically evaluating the legal compliance of AI agents with website scraping policies, namely terms of service (ToS) and robots.txt directives. Across widely used clos",
+    "date": "November 12, 2026",
+    "iso_date": "2026-11-12T23:00:22.509192+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Visual Similarity in Adult Word Extension and Artificial Word Learning",
     "slug": "visual-similarity-in-adult-word-extension-and-artificial-word-learning",
     "category": "Open-Source & Model Weights",
