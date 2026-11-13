@@ -3,8 +3,13 @@
   <url>
     <loc>https://mantralabs.web.id/</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/trump-nominates-hester-peirce-successor-among-sec-cftc-picks.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mantralabs.web.id/articles/gold-oil-middle-east-war-risk-transmission-macro-assets.html</loc>
