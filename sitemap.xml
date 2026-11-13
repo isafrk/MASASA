@@ -3,8 +3,31 @@
   <url>
     <loc>https://mantralabs.web.id/</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/roadmap-is-complete-cardano-founder-charles-hoskinson-says.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/morning-minute-crypto-plummets-as-jensen-huang-exits-nvidia.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/nvidia-employees-push-board-to-bring-back-jensen-huang-report.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mantralabs.web.id/articles/gold-oil-middle-east-war-risk-transmission-macro-assets.html</loc>
