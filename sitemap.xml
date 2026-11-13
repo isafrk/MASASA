@@ -3,169 +3,330 @@
   <url>
     <loc>https://mantralabs.web.id/</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/</loc>
+    <loc>https://mantralabs.web.id/articles/iran-braces-for-a-budget-without-oil-revenue.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mantralabs.web.id/news/back-to-pixels-lifting-latent-video-diffusion-into-pixel-space.html</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/consensus-capture-in-reference-based-uav-video-stabilization-a-benchmark-on.html</loc>
+    <loc>https://mantralabs.web.id/articles/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/probing-transformer-representations-layer-by-layer-module-by-module.html</loc>
+    <loc>https://mantralabs.web.id/articles/ai-agent-startup-langchain-hits-3b-valuation.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/scrapebench-evaluating-legal-compliance-of-ai-agents-in-website-scraping.html</loc>
+    <loc>https://mantralabs.web.id/articles/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-mod.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/visual-similarity-in-adult-word-extension-and-artificial-word-learning.html</loc>
+    <loc>https://mantralabs.web.id/articles/nvidias-stock-is-on-a-losing-streak-not-seen-in-14-years-what-com.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/prompt2echo-p2echo-text-prompted-multi-view-echocardiography-segmentation-w.html</loc>
+    <loc>https://mantralabs.web.id/articles/faa-declares-rare-nationwide-ground-stop-on-flights-citing-extrao.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/e-means-outperforming-k-means-in-one-tenth-the-epochs.html</loc>
+    <loc>https://mantralabs.web.id/articles/global-oil-supplies-are-suddenly-flowing-why-a-crude-glut-wont-me.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/motiongraphicsbench-evaluating-motion-graphics-generation-with-programmatic.html</loc>
+    <loc>https://mantralabs.web.id/articles/amd-and-other-chip-stocks-slide-as-wall-street-rethinks-the-ai-tr.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/ode-policy-robot-learning-via-action-dynamics-not-actions.html</loc>
+    <loc>https://mantralabs.web.id/articles/will-the-senates-baaja-bill-let-ai-giants-outmuscle-utilities.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/toward-the-era-of-agentic-embodied-intelligence.html</loc>
+    <loc>https://mantralabs.web.id/articles/silvers-6th-annual-deficit-masks-a-surplus-as-etf-selling-adds-su.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/openfrontiers-a-collection-of-open-research-problems-and-a-benchmark-for-sc.html</loc>
+    <loc>https://mantralabs.web.id/articles/gold-breaks-below-4000-as-rising-yields-redefine-the-macro-trade.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/terminal-style-mathematical-modeling-bench-the-first-agentic-and-verifiable.html</loc>
+    <loc>https://mantralabs.web.id/articles/bitcoin-could-fall-even-further-if-investors-cash-out-to-buy-into.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/tools-need-not-speak-in-text-latent-context-compression-for-agents.html</loc>
+    <loc>https://mantralabs.web.id/articles/trump-extends-jones-act-waiver-for-another-90-days.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/swarmevolve-latent-agent-swarms-for-evolutionary-discovery-and-optimization.html</loc>
+    <loc>https://mantralabs.web.id/articles/jensen-huang-was-a-china-salesman-for-nvidia-his-exit-is-weighing.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/signed-but-steerable-measuring-and-closing-the-text-vector-integrity-gap-in.html</loc>
+    <loc>https://mantralabs.web.id/articles/retirees-should-be-big-beneficiaries-of-the-midterms-democrats-wi.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/stepx-opd-rethinking-multi-teacher-on-policy-distillation-in-diffusion-mode.html</loc>
+    <loc>https://mantralabs.web.id/articles/my-husband-inherited-500000-but-he-refuses-to-spend-it-on-our-hom.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/synthfaces-balanced-large-scale-human-dataset.html</loc>
+    <loc>https://mantralabs.web.id/articles/beijing-turns-to-soft-power-as-washington-expands-central-asia-ti.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/decoupled-predictive-decision-making-a-shared-conditional-predictor-for-age.html</loc>
+    <loc>https://mantralabs.web.id/articles/germany-eyes-4-billion-buyout-of-rwe-and-eons-urenco-stake.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/kierston-kierstonbench-simulation-of-allentown-pa-and-evaluation-of-languag.html</loc>
+    <loc>https://mantralabs.web.id/articles/golds-break-below-october-low-draws-parallels-with-the-historic-2.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/factorized-mllm-embeddings-for-composed-image-retrieval.html</loc>
+    <loc>https://mantralabs.web.id/articles/the-scandal-at-nvidia-is-exactly-whats-wrong-with-the-sp-500.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/oswam-an-effective-world-action-model-with-one-step-action-generation.html</loc>
+    <loc>https://mantralabs.web.id/articles/us-oil-rigs-hold-at-463-as-crude-output-hits-another-record.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/think-twice-the-metis-16-technical-report.html</loc>
+    <loc>https://mantralabs.web.id/articles/iraqs-oil-production-soars-to-2019-high-as-hormuz-flows-surge.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/unlocking-any-order-generation-in-pretrained-autoregressive-image-models.html</loc>
+    <loc>https://mantralabs.web.id/articles/gold-miners-face-a-profit-squeeze-as-production-falls-and-costs-h.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/matched-capabilities-different-behaviors-a-controlled-study-of-mcp-and-cli-.html</loc>
+    <loc>https://mantralabs.web.id/articles/i-am-turning-18-next-month-and-want-to-start-investing-what-do-i-.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/epsbench-benchmarking-llm-agents-for-earnings-forecasting.html</loc>
+    <loc>https://mantralabs.web.id/articles/brent-crude-climbs-back-above-96-as-iran-tensions-escalate.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mantralabs.web.id/news/weaken-to-strengthen-weakening-induced-on-policy-self-distillation-for-larg.html</loc>
+    <loc>https://mantralabs.web.id/articles/indias-road-fuel-demand-wont-peak-until-2034.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/how-low-does-nvidias-stock-need-to-go-before-its-a-screaming-barg.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/if-you-could-change-one-thing-about-caregiving-what-would-it-be.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/germany-is-dismantling-a-nord-stream-power-plant-for-ukraine.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/iran-rules-out-return-of-un-nuclear-inspectors-as-us-war-talks-st.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/gold-risks-a-drop-below-3838-as-iran-tensions-keep-sellers-on-ale.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/the-energy-report-weve-got-the-strait-bring-on-the-oil-glut.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/roadmap-is-complete-cardano-founder-charles-hoskinson-says.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/morning-minute-crypto-plummets-as-jensen-huang-exits-nvidia.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/nvidia-employees-push-board-to-bring-back-jensen-huang-report.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/gold-oil-middle-east-war-risk-transmission-macro-assets.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/us-china-bilateral-dynamics-petrodollar-erosion-trade.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/ai-hyperscaler-capex-supercycle-semiconductors-energy-limits.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/federal-reserve-interest-rates-emerging-market-equity-valuations.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/bitcoin-etf-institutional-liquidity-supply-halving-dynamics.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/how-global-energy-markets-survived-eight-months-of-iran-war-disruption.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/oil-imports-to-asia-rebound-as-gulf-discounts-outweigh-hormuz-risks.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/portugal-vs-denmark-uefa-nations-league-predictions-how-to-watch-teams.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/what-the-blue-tsunami-means-for-southeast-asias-economies.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/trump-administration-is-hiring-debt-collectors-to-go-after-defaulted-s.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/kraken-parent-payward-says-expansion-outside-crypto-trading-helps-cush.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/heres-what-happened-in-crypto-today.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/crypto-laundering-a-material-risk-for-uk-ahead-of-fatf-review-rusi.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/tether-backed-twenty-one-capital-reports-109-billion-q3-net-income-on-.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belongi.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-team.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/llamacpp-v100-a-stronger-foundation-for-the-local-ai-ecosystem.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mantralabs.web.id/articles/broken-and-shattered-nvidia-ceo-jensen-huang-surrendered-during-resign.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
