@@ -1,5 +1,29 @@
 [
   {
+    "title": "Back to Pixels: Lifting Latent Video Diffusion into Pixel Space",
+    "slug": "back-to-pixels-lifting-latent-video-diffusion-into-pixel-space",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.17336",
+    "summary": "Frontier video generation models work in a VAE latent space that compresses video in both space and time. This compression made training tractable, but now limits high-resolution, controllable, and interactive generation -- doubling resolution quadruples token count, conditions apply to groups of frames rather than individual ones, and each response must wait for the rest of its multi-frame block.",
+    "date": "November 13, 2026",
+    "iso_date": "2026-11-13T23:00:57.548332+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes",
+    "slug": "consensus-capture-in-reference-based-uav-video-stabilization-a-benchmark-on",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.17190",
+    "summary": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate towa",
+    "date": "November 13, 2026",
+    "iso_date": "2026-11-13T23:00:57.548332+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Probing Transformer Representations Layer by Layer, Module by Module",
     "slug": "probing-transformer-representations-layer-by-layer-module-by-module",
     "category": "Open-Source & Model Weights",
