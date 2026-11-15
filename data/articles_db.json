@@ -1,5 +1,29 @@
 [
   {
+    "title": "Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction",
+    "slug": "who-remembers-what-multi-granularity-memory-extraction-for-multi-user-multi",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.10439",
+    "summary": "Self-evolving agents improve their own skills, memory, and harness code from experience without retraining the base LLM, and group-evolving agents go further by sharing these lessons across agents. Yet most such systems overlook that sharing across users and heterogeneous agents requires deciding who can benefit from each lesson and what information must remain private. We present MixUA, a memory ",
+    "date": "November 15, 2026",
+    "iso_date": "2026-11-15T03:25:48.147513+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "EgoX: Egocentric Cross-Embodiment Manipulation with Embodiment Dreaming",
+    "slug": "egox-egocentric-cross-embodiment-manipulation-with-embodiment-dreaming",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.16728",
+    "summary": "Generalist manipulation policies can benefit from the complementary experience of humans, real robots, and simulated agents. However, differences in morphology, sensing, and control interfaces make it difficult to learn effectively from their combined demonstrations. We introduce EgoX, an egocentric cross-embodiment learning framework that organizes heterogeneous demonstrations through semanticall",
+    "date": "November 15, 2026",
+    "iso_date": "2026-11-15T03:25:48.147513+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Back to Pixels: Lifting Latent Video Diffusion into Pixel Space",
     "slug": "back-to-pixels-lifting-latent-video-diffusion-into-pixel-space",
     "category": "Open-Source & Model Weights",
