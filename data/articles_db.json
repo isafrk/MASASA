@@ -1,5 +1,29 @@
 [
   {
+    "title": "VisualArtifactSpec 1.0: Evaluating Visual Artifacts under Task Specifications",
+    "slug": "visualartifactspec-10-evaluating-visual-artifacts-under-task-specifications",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.21382",
+    "summary": "Visual artifact tasks test agents' ability to translate task specifications and source materials into outputs that meet practical needs. Evaluation across artifact families helps distinguish broadly applicable authoring capabilities from strengths confined to a particular medium. We introduce VisualArtifactSpec 1.0 (VAS), a benchmark of 211 creation and modification tasks spanning presentations, s",
+    "date": "November 18, 2026",
+    "iso_date": "2026-11-18T12:39:15.608651+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "AuXSpec: Learning to Autoformalize Program Specifications via Executable Postconditions",
+    "slug": "auxspec-learning-to-autoformalize-program-specifications-via-executable-pos",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.21421",
+    "summary": "Formal specifications define intended program behavior and underpin verification, but writing them in theorem provers such as Lean is slow and expertise-intensive, making specification a major bottleneck to scaling formally correct code. Autoformalization from natural-language problems is promising, yet training specification models requires scalable feedback on whether generated specifications ca",
+    "date": "November 18, 2026",
+    "iso_date": "2026-11-18T12:39:15.608651+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction",
     "slug": "who-remembers-what-multi-granularity-memory-extraction-for-multi-user-multi",
     "category": "Open-Source & Model Weights",
