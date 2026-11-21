@@ -1,5 +1,29 @@
 [
   {
+    "title": "PAD: Policy-Aware Data Valuation for Autonomous Driving",
+    "slug": "pad-policy-aware-data-valuation-for-autonomous-driving",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.25604",
+    "summary": "End-to-end autonomous driving increasingly depends on scaling training demonstrations, yet data growth does not guarantee proportional gains. However, additional data do not guarantee better policies: a demonstration that benefits one planner may be redundant or harmful to another. Existing curation methods typically infer data value from intrinsic sample properties or training-dependent proxies t",
+    "date": "November 21, 2026",
+    "iso_date": "2026-11-21T23:00:25.092269+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Lang-SVG: Hierarchical Image Vectorization with Language Priors",
+    "slug": "lang-svg-hierarchical-image-vectorization-with-language-priors",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.15941",
+    "summary": "Image vectorization reconstructs raster images as compact scalable vector graph- ics (SVG), providing a structured and editable code representation of images. However, most existing vectorization methods optimize for pixel-level render- ing fidelity, often producing SVGs that lack alignment with human-perceived object-part hierarchies, making them difficult to manipulate. To address this, we propo",
+    "date": "November 21, 2026",
+    "iso_date": "2026-11-21T23:00:25.092269+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Time Series Structure Learning with Local Causal Parent Discovery",
     "slug": "time-series-structure-learning-with-local-causal-parent-discovery",
     "category": "Open-Source & Model Weights",
