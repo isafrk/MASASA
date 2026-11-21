@@ -1,5 +1,29 @@
 [
   {
+    "title": "Time Series Structure Learning with Local Causal Parent Discovery",
+    "slug": "time-series-structure-learning-with-local-causal-parent-discovery",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.26232",
+    "summary": "Learning and inference on time series can pose significant statistical challenges, including autocorrelated observations, distribution shift over time, and the curse of dimensionality. These challenges complicate the practical application of causal discovery algorithms, which already suffer from high computational and sample complexity in the general case. To mitigate these issues, this work intro",
+    "date": "November 21, 2026",
+    "iso_date": "2026-11-21T10:37:23.097128+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Teaching Vision-Language-Action Models to Stop Safely",
+    "slug": "teaching-vision-language-action-models-to-stop-safely",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.26239",
+    "summary": "Vision-language-action (VLA) models enable robots to perform diverse tasks from visual observations and language instructions. While prior work has explored task suppression and refusal, stopping prohibited behavior once execution is underway and controlling the resulting physical response remain challenging. Our evaluation reveals that policies which suppress a task from its initial state can sti",
+    "date": "November 21, 2026",
+    "iso_date": "2026-11-21T10:37:23.097128+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "VisualArtifactSpec 1.0: Evaluating Visual Artifacts under Task Specifications",
     "slug": "visualartifactspec-10-evaluating-visual-artifacts-under-task-specifications",
     "category": "Open-Source & Model Weights",
