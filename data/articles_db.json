@@ -1,5 +1,29 @@
 [
   {
+    "title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
+    "slug": "let-the-fixer-decide-training-a-code-localizer-from-the-fixers-likelihood",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.12164",
+    "summary": "Code localizers are usually trained to predict the files a reference patch edits, but the code a fixer needs to read is not the same as the code it changes. We propose Fixer-Guided Localization (FGL): the localizer proposes several localizations, a frozen fixer scores each by how likely it makes a verified patch, and the localizer is trained on these scores with weighted supervised fine-tuning, wi",
+    "date": "November 24, 2026",
+    "iso_date": "2026-11-24T10:14:54.176839+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "Open Vision Banana: An Open Framework for Unified Visual Perception through Generation in RGB Space",
+    "slug": "open-vision-banana-an-open-framework-for-unified-visual-perception-through-",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.28489",
+    "summary": "Vision Banana showed that a closed image generator, instruction-tuned to paint perception outputs as RGB images, becomes a generalist vision model. Does this carry over to open generators, and if not, what fails? We answer with Open Vision Banana (OVB), an open framework that adapts the 7B diffusion generator of Qwen-Image-2.1 into one instruction-driven model for metric depth, semantic, instance,",
+    "date": "November 24, 2026",
+    "iso_date": "2026-11-24T10:14:54.176839+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "PAD: Policy-Aware Data Valuation for Autonomous Driving",
     "slug": "pad-policy-aware-data-valuation-for-autonomous-driving",
     "category": "Open-Source & Model Weights",
