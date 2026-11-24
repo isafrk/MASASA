@@ -1,5 +1,29 @@
 [
   {
+    "title": "PixelOne: From Options to Pixels in a Single Forward for GUI Grounding",
+    "slug": "pixelone-from-options-to-pixels-in-a-single-forward-for-gui-grounding",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.30235",
+    "summary": "GUI grounding requires precise clicks at low latency. Recent models such as GUI-Decisions and GUI-Swift predict coordinates in one forward pass using fixed global bins with local refinement. However, screenshot downsampling removes detail needed to locate small controls, while fixed bins cover larger pixel ranges at higher resolutions. We introduce PixelOne, which transfers spatial knowledge from ",
+    "date": "November 24, 2026",
+    "iso_date": "2026-11-24T23:00:46.221607+00:00",
+    "reading_time": "4 min read"
+  },
+  {
+    "title": "VideoJSON: A Minimal Harness Beats Purpose-Built Memory for Ultra-Long Video Understanding",
+    "slug": "videojson-a-minimal-harness-beats-purpose-built-memory-for-ultra-long-video",
+    "category": "Open-Source & Model Weights",
+    "badge": "RESEARCH SOTA",
+    "source": "Hugging Face Research",
+    "url": "https://huggingface.co/papers/2611.28167",
+    "summary": "Answering questions over days or weeks of video requires searching for scattered clues across long timelines. Existing video agents rely on complex memory graphs and fixed retrieval pipelines, which restrict how the agent can search. We propose VideoJSON, a minimal harness for ultra-long video understanding that keeps the memory simple and lets a coding agent write its own search programs. During ",
+    "date": "November 24, 2026",
+    "iso_date": "2026-11-24T23:00:46.221607+00:00",
+    "reading_time": "4 min read"
+  },
+  {
     "title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
     "slug": "let-the-fixer-decide-training-a-code-localizer-from-the-fixers-likelihood",
     "category": "Open-Source & Model Weights",
